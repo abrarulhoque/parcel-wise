@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.545.0",
     "next": "^15.5.4",
