@@ -1,20 +1,36 @@
 @import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=JetBrains+Mono&display=swap');
 
-@layer base {
-  :root {
-    --primary-orange: #FF6200;
-    --primary-blue: #003082;
-    --secondary-blue: #0066CC;
-  }
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
+  --color-primary-orange: #FF6200;
+  --color-primary-blue: #003082;
+  --color-secondary-blue: #0066CC;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #E5E7EB;
+  --color-neutral-500: #6B7280;
+  --color-neutral-900: #1F2937;
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@layer base {
   body {
-    @apply font-sans text-neutral-900;
+    font-family: var(--font-sans);
+    color: var(--color-neutral-900);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    font-family: var(--font-heading);
   }
 }
 
