@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=JetBrains+Mono&display=swap');
+
+@layer base {
+  :root {
+    --primary-orange: #FF6200;
+    --primary-blue: #003082;
+    --secondary-blue: #0066CC;
+  }
+
+  body {
+    @apply font-sans text-neutral-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
