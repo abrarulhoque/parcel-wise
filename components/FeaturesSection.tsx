@@ -8,7 +8,7 @@ const features = [
     icon: Printer,
     title: 'Instant Label Creation',
     description: 'Create PostNL shipping labels in seconds. Bulk print up to 500 labels at once with automated address validation.',
-    color: 'from-secondary-blue to-blue-600'
+    color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: MapPin,
@@ -20,13 +20,13 @@ const features = [
     icon: TrendingDown,
     title: 'Cost Optimization',
     description: 'Access discounted PostNL rates and smart shipping suggestions. Save up to 40% on domestic and international shipping.',
-    color: 'from-accent-blue to-primary-blue'
+    color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingUp,
     title: 'Analytics & Insights',
     description: 'Track carrier performance, shipping costs, and delivery success rates. Make data-driven decisions to improve operations.',
-    color: 'from-secondary-blue to-primary-blue'
+    color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: Settings,
@@ -38,7 +38,7 @@ const features = [
     icon: FileText,
     title: 'Invoice Management',
     description: 'View and download all shipping invoices in one place. Export reports for accounting and reconciliation.',
-    color: 'from-accent-blue to-secondary-blue'
+    color: 'from-primary-blue to-accent-blue'
   },
 ];
 
