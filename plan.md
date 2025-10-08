@@ -8,13 +8,13 @@ I'll help you create a comprehensive plan for the PostNL integration website con
 
 ### **Color Palette**
 
-- **Primary Orange**: #FF6200 (PostNL signature color)
-- **Primary Blue**: #003082 (PostNL dark blue)
-- **Secondary Blue**: #0066CC (Interactive elements)
+- **Primary Blue**: #2B5A87 (Dark blue - headers and primary elements)
+- **Secondary Blue**: #4A8FDB (Bright blue - buttons and accents)
+- **Accent Blue**: #3D5E7C (Medium blue - graphics and decorative elements)
 - **Success Green**: #10B981
 - **Warning Yellow**: #F59E0B
 - **Error Red**: #EF4444
-- **Neutral Gray Scale**: #F9FAFB, #E5E7EB, #6B7280, #1F2937
+- **Neutral Gray Scale**: #F5F8FA, #E8EEF3, #6B7280, #1F2937
 - **White**: #FFFFFF
 
 ### **Typography**
