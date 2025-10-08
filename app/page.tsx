@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import TrustBar from '@/components/TrustBar';
 import FeaturesSection from '@/components/FeaturesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import DashboardPreview from '@/components/DashboardPreview';
@@ -14,7 +13,6 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen">
         <HeroSection />
-        <TrustBar />
         <FeaturesSection />
         <HowItWorksSection />
         <DashboardPreview />
