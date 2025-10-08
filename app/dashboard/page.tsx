@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Package, TrendingUp, Truck, DollarSign } from 'lucide-react';
+import { Package, TrendingUp, Truck, DollarSign, Plus, Upload, Printer, FileText, Clock, CheckCircle, XCircle } from 'lucide-react';
+import DashboardLayout from '@/components/DashboardLayout';
+import Link from 'next/link';
 
 export default function DashboardPage() {
   const stats = [
@@ -9,46 +11,77 @@ export default function DashboardPage() {
       icon: Package,
       label: 'Total Shipments',
       value: '1,247',
-      change: '+12.5%',
+      change: '+12.5% from last month',
       color: 'from-secondary-blue to-primary-blue'
     },
     {
-      icon: TrendingUp,
+      icon: Clock,
       label: 'Active Orders',
       value: '89',
-      change: 'Awaiting labels',
+      change: 'Awaiting label creation',
       color: 'from-primary-blue to-accent-blue'
     },
     {
       icon: Truck,
       label: 'In Transit',
       value: '342',
-      change: '98% on time',
+      change: '98% on time delivery',
       color: 'from-accent-blue to-secondary-blue'
     },
     {
       icon: DollarSign,
       label: 'Cost Savings',
       value: '€3,459',
-      change: '38% savings',
+      change: '38% savings this month',
       color: 'from-secondary-blue to-blue-600'
     },
   ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-primary-blue/5">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-primary-blue to-secondary-blue text-white py-8 px-6 shadow-lg">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Dashboard</h1>
-          <p className="text-white/90">Welcome back! Here's your shipping overview.</p>
-        </div>
-      </div>
+  const recentOrders = [
+    { id: '#12345', customer: 'Emma de Vries', destination: 'Amsterdam', status: 'pending', method: 'PostNL Standard', date: '2025-10-08' },
+    { id: '#12344', customer: 'Lucas Bakker', destination: 'Rotterdam', status: 'in-transit', method: 'PostNL Next Day', date: '2025-10-07' },
+    { id: '#12343', customer: 'Sophie Jansen', destination: 'Utrecht', status: 'delivered', method: 'PostNL Standard', date: '2025-10-07' },
+    { id: '#12342', customer: 'Noah Visser', destination: 'Den Haag', status: 'label-created', method: 'PostNL Same Day', date: '2025-10-06' },
+    { id: '#12341', customer: 'Mila de Jong', destination: 'Eindhoven', status: 'in-transit', method: 'PostNL Standard', date: '2025-10-06' },
+    { id: '#12340', customer: 'Daan Peters', destination: 'Groningen', status: 'delivered', method: 'PostNL Next Day', date: '2025-10-05' },
+    { id: '#12339', customer: 'Fleur van Dijk', destination: 'Tilburg', status: 'exception', method: 'PostNL Standard', date: '2025-10-05' },
+    { id: '#12338', customer: 'Sem Mulder', destination: 'Almere', status: 'delivered', method: 'PostNL Standard', date: '2025-10-04' },
+  ];
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+  const activityData = Array.from({ length: 30 }, (_, i) => ({
+    day: i + 1,
+    shipments: Math.floor(Math.random() * 40) + 20
+  }));
+
+  const recentActivity = [
+    { text: 'Order #12457 delivered successfully', time: '5 min ago', type: 'success' },
+    { text: '5 new orders imported', time: '15 min ago', type: 'info' },
+    { text: 'Label created for Order #12458', time: '1 hour ago', type: 'info' },
+    { text: 'Invoice #INV-2025-045 available', time: '2 hours ago', type: 'info' },
+  ];
+
+  const getStatusBadge = (status: string) => {
+    const badges = {
+      'pending': { bg: 'bg-warning/10', text: 'text-warning', label: 'Pending' },
+      'label-created': { bg: 'bg-secondary-blue/10', text: 'text-secondary-blue', label: 'Label Created' },
+      'in-transit': { bg: 'bg-primary-blue/10', text: 'text-primary-blue', label: 'In Transit' },
+      'delivered': { bg: 'bg-success/10', text: 'text-success', label: 'Delivered' },
+      'exception': { bg: 'bg-error/10', text: 'text-error', label: 'Exception' },
+    };
+    return badges[status as keyof typeof badges] || badges.pending;
+  };
+
+  return (
+    <DashboardLayout>
+      <div className="space-y-8">
+        {/* Page Header */}
+        <div>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Dashboard Overview</h1>
+          <p className="text-neutral-600">Welcome back! Here's what's happening with your shipments.</p>
+        </div>
+
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -57,7 +90,8 @@ export default function DashboardPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-100"
               >
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4`}>
                   <Icon className="text-white" size={24} />
@@ -70,40 +104,158 @@ export default function DashboardPage() {
           })}
         </div>
 
-        {/* Coming Soon Section */}
+        {/* Quick Actions */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl p-12 text-center"
+          transition={{ delay: 0.4 }}
+          className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
         >
-          <div className="max-w-2xl mx-auto">
-            <div className="w-20 h-20 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-full flex items-center justify-center mx-auto mb-6">
-              <Package className="text-white" size={40} />
+          <h2 className="text-lg font-semibold text-neutral-900 mb-4">Quick Actions</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/dashboard/create-label">
+              <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                <Plus size={20} />
+                Create Label
+              </button>
+            </Link>
+            <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
+              <Upload size={20} />
+              Import Orders
+            </button>
+            <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
+              <Printer size={20} />
+              Bulk Print
+            </button>
+            <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
+              <FileText size={20} />
+              Reports
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Recent Orders & Activity */}
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Recent Orders Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-neutral-100 overflow-hidden"
+          >
+            <div className="p-6 border-b border-neutral-100 flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-semibold text-neutral-900">Recent Orders</h2>
+                <p className="text-sm text-neutral-500 mt-1">Showing 8 of 89 orders</p>
+              </div>
+              <Link href="/dashboard/orders">
+                <button className="text-secondary-blue hover:text-primary-blue font-medium text-sm">
+                  View All →
+                </button>
+              </Link>
             </div>
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-              Dashboard Coming Soon!
-            </h2>
-            <p className="text-lg text-neutral-600 mb-8">
-              We're building an amazing dashboard experience for you. This is a concept demo showing the login and registration flow.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 text-left">
-              <div className="p-4 bg-neutral-50 rounded-lg">
-                <h3 className="font-semibold text-neutral-900 mb-2">📦 Create Labels</h3>
-                <p className="text-sm text-neutral-600">Generate shipping labels instantly</p>
-              </div>
-              <div className="p-4 bg-neutral-50 rounded-lg">
-                <h3 className="font-semibold text-neutral-900 mb-2">📍 Track Shipments</h3>
-                <p className="text-sm text-neutral-600">Monitor all your packages in real-time</p>
-              </div>
-              <div className="p-4 bg-neutral-50 rounded-lg">
-                <h3 className="font-semibold text-neutral-900 mb-2">📊 Analytics</h3>
-                <p className="text-sm text-neutral-600">View detailed shipping insights</p>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-neutral-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Order ID</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Customer</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Destination</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Status</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Method</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-100">
+                  {recentOrders.map((order) => {
+                    const badge = getStatusBadge(order.status);
+                    return (
+                      <tr key={order.id} className="hover:bg-neutral-50 transition-colors">
+                        <td className="px-6 py-4 text-sm font-medium text-neutral-900">{order.id}</td>
+                        <td className="px-6 py-4 text-sm text-neutral-600">{order.customer}</td>
+                        <td className="px-6 py-4 text-sm text-neutral-600">{order.destination}</td>
+                        <td className="px-6 py-4">
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${badge.bg} ${badge.text}`}>
+                            {badge.label}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-neutral-600">{order.method}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
+          </motion.div>
+
+          {/* Recent Activity Feed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
+          >
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Recent Activity</h2>
+            <div className="space-y-4">
+              {recentActivity.map((activity, index) => (
+                <div key={index} className="flex gap-3">
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    activity.type === 'success' ? 'bg-success/10' : 'bg-secondary-blue/10'
+                  }`}>
+                    {activity.type === 'success' ? (
+                      <CheckCircle className="text-success" size={16} />
+                    ) : (
+                      <Package className="text-secondary-blue" size={16} />
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-neutral-900">{activity.text}</p>
+                    <p className="text-xs text-neutral-500 mt-0.5">{activity.time}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Shipping Activity Chart */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
+        >
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-lg font-semibold text-neutral-900">Shipping Activity</h2>
+              <p className="text-sm text-neutral-500 mt-1">Last 30 days</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="px-3 py-1.5 bg-secondary-blue text-white rounded-lg text-sm font-medium">Day</button>
+              <button className="px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-lg text-sm font-medium hover:bg-neutral-200">Week</button>
+              <button className="px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-lg text-sm font-medium hover:bg-neutral-200">Month</button>
+            </div>
+          </div>
+          <div className="h-64 flex items-end justify-between gap-1">
+            {activityData.map((data, index) => (
+              <div key={index} className="flex-1 flex flex-col items-center group">
+                <div className="relative w-full">
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: `${(data.shipments / 60) * 100}%` }}
+                    transition={{ delay: 0.7 + index * 0.02, duration: 0.5 }}
+                    className="w-full bg-gradient-to-t from-secondary-blue to-primary-blue rounded-t group-hover:from-primary-blue group-hover:to-secondary-blue transition-all cursor-pointer"
+                    style={{ minHeight: '4px' }}
+                  >
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">
+                      {data.shipments} shipments
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
