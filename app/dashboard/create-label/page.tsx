@@ -2,13 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, Package, Truck, Zap, Shield, FileText, Printer } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Package, Truck, Zap, Shield, FileText, Printer, Download, CheckCircle, Home } from 'lucide-react';
 import DashboardLayout from '@/components/DashboardLayout';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function CreateLabelPage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
+  const [labelCreated, setLabelCreated] = useState(false);
+  const [trackingNumber, setTrackingNumber] = useState('');
   const [formData, setFormData] = useState({
     // Step 1: Order Details
     fullName: '',
@@ -80,16 +83,18 @@ export default function CreateLabelPage() {
   };
 
   const handleSubmit = () => {
-    // Simulate label creation
-    setTimeout(() => {
-      router.push('/dashboard/tracking');
-    }, 1500);
+    // Generate random tracking number
+    const randomTracking = 'PN3YZ' + Math.random().toString().slice(2, 14);
+    setTrackingNumber(randomTracking);
+    setLabelCreated(true);
+    setCurrentStep(4);
   };
 
   const steps = [
     { number: 1, title: 'Order Details' },
     { number: 2, title: 'Shipping Options' },
     { number: 3, title: 'Review & Print' },
+    { number: 4, title: 'Label Created' },
   ];
 
   return (
@@ -552,6 +557,270 @@ export default function CreateLabelPage() {
                   <Printer size={20} />
                   Create & Print Label
                 </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Step 4: Label Created Success */}
+        {currentStep === 4 && labelCreated && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6"
+          >
+            {/* Success Message */}
+            <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-8 border-2 border-success/20 text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                className="w-20 h-20 bg-success rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <CheckCircle className="text-white" size={48} />
+              </motion.div>
+              <h2 className="text-2xl font-bold text-neutral-900 mb-2">Label Created Successfully!</h2>
+              <p className="text-neutral-600">Your shipping label has been generated and is ready to use.</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Shipping Label */}
+              <div className="bg-white rounded-xl shadow-lg border-2 border-neutral-200 overflow-hidden">
+                <div className="bg-gradient-to-r from-secondary-blue to-primary-blue p-4 text-white">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Package size={24} />
+                      <span className="font-bold text-lg">PostNL</span>
+                    </div>
+                    <span className="text-sm opacity-90">Shipping Label</span>
+                  </div>
+                </div>
+
+                <div className="p-6 space-y-6">
+                  {/* Tracking Number */}
+                  <div className="text-center">
+                    <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Tracking Number</div>
+                    <div className="font-mono text-xl font-bold text-neutral-900 bg-neutral-50 py-3 px-4 rounded-lg">
+                      {trackingNumber}
+                    </div>
+                  </div>
+
+                  {/* Barcode */}
+                  <div className="bg-neutral-50 rounded-lg p-6">
+                    <div className="text-center space-y-2">
+                      <div className="text-6xl">📦</div>
+                      <svg className="w-full h-20" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                        {/* Barcode lines */}
+                        {Array.from({ length: 50 }).map((_, i) => (
+                          <rect
+                            key={i}
+                            x={i * 4}
+                            y="0"
+                            width={Math.random() > 0.5 ? "2" : "1"}
+                            height="50"
+                            fill="black"
+                          />
+                        ))}
+                      </svg>
+                      <div className="font-mono text-xs text-neutral-500">{trackingNumber}</div>
+                    </div>
+                  </div>
+
+                  {/* Sender & Recipient */}
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <div className="font-semibold text-neutral-900 mb-2">FROM:</div>
+                      <div className="text-neutral-600 space-y-1">
+                        <div>Company Ltd.</div>
+                        <div>Damstraat 123</div>
+                        <div>1012 JK Amsterdam</div>
+                        <div>Netherlands</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-neutral-900 mb-2">TO:</div>
+                      <div className="text-neutral-600 space-y-1">
+                        <div>{formData.fullName || 'Customer Name'}</div>
+                        <div>{formData.street} {formData.houseNumber}</div>
+                        <div>{formData.postalCode} {formData.city}</div>
+                        <div>{formData.country}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Service Type */}
+                  <div className="border-t pt-4">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-neutral-600">Service:</span>
+                      <span className="font-semibold text-neutral-900">
+                        {shippingMethods.find(m => m.id === formData.shippingMethod)?.name}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm mt-2">
+                      <span className="text-neutral-600">Weight:</span>
+                      <span className="font-semibold text-neutral-900">{formData.weight} kg</span>
+                    </div>
+                    {formData.reference && (
+                      <div className="flex items-center justify-between text-sm mt-2">
+                        <span className="text-neutral-600">Reference:</span>
+                        <span className="font-semibold text-neutral-900">{formData.reference}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Additional Services */}
+                  {(formData.extraInsurance || formData.signatureRequired || formData.ageVerification) && (
+                    <div className="border-t pt-4">
+                      <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Additional Services</div>
+                      <div className="flex flex-wrap gap-2">
+                        {formData.extraInsurance && (
+                          <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
+                            Extra Insurance
+                          </span>
+                        )}
+                        {formData.signatureRequired && (
+                          <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
+                            Signature Required
+                          </span>
+                        )}
+                        {formData.ageVerification && (
+                          <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
+                            Age Verification
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Actions & Summary */}
+              <div className="space-y-6">
+                {/* Cost Summary */}
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100">
+                  <h3 className="font-semibold text-neutral-900 mb-4">Order Summary</h3>
+                  {(() => {
+                    const { subtotal, vat, total } = calculateTotal();
+                    const selectedMethod = shippingMethods.find(m => m.id === formData.shippingMethod);
+
+                    return (
+                      <div className="space-y-3">
+                        <div className="flex justify-between text-sm text-neutral-600">
+                          <span>{selectedMethod?.name}</span>
+                          <span>€{selectedMethod?.price.toFixed(2)}</span>
+                        </div>
+                        {formData.extraInsurance && (
+                          <div className="flex justify-between text-sm text-neutral-600">
+                            <span>Extra Insurance</span>
+                            <span>€2.50</span>
+                          </div>
+                        )}
+                        {formData.signatureRequired && (
+                          <div className="flex justify-between text-sm text-neutral-600">
+                            <span>Signature Required</span>
+                            <span>€0.50</span>
+                          </div>
+                        )}
+                        {formData.ageVerification && (
+                          <div className="flex justify-between text-sm text-neutral-600">
+                            <span>Age Verification</span>
+                            <span>€1.00</span>
+                          </div>
+                        )}
+                        <div className="border-t border-neutral-200 pt-3 flex justify-between text-sm text-neutral-600">
+                          <span>Subtotal</span>
+                          <span>€{subtotal.toFixed(2)}</span>
+                        </div>
+                        <div className="flex justify-between text-sm text-neutral-600">
+                          <span>VAT (21%)</span>
+                          <span>€{vat.toFixed(2)}</span>
+                        </div>
+                        <div className="border-t-2 border-neutral-900 pt-3 flex justify-between text-lg font-bold text-neutral-900">
+                          <span>Total Charged</span>
+                          <span>€{total.toFixed(2)}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100 space-y-3">
+                  <h3 className="font-semibold text-neutral-900 mb-4">What's next?</h3>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => window.print()}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  >
+                    <Printer size={20} />
+                    Print Label
+                  </motion.button>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-secondary-blue text-secondary-blue rounded-lg font-semibold hover:bg-secondary-blue hover:text-white transition-all"
+                  >
+                    <Download size={20} />
+                    Download PDF
+                  </motion.button>
+
+                  <div className="pt-3 border-t border-neutral-200 space-y-2">
+                    <Link href="/dashboard/tracking">
+                      <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
+                        <Package size={18} />
+                        Track This Shipment
+                      </button>
+                    </Link>
+
+                    <button
+                      onClick={() => {
+                        setCurrentStep(1);
+                        setLabelCreated(false);
+                        setFormData({
+                          fullName: '',
+                          email: '',
+                          phone: '',
+                          street: '',
+                          houseNumber: '',
+                          postalCode: '',
+                          city: '',
+                          country: 'Netherlands',
+                          weight: '',
+                          length: '',
+                          width: '',
+                          height: '',
+                          packageType: 'parcel',
+                          reference: '',
+                          shippingMethod: 'standard',
+                          extraInsurance: false,
+                          signatureRequired: false,
+                          ageVerification: false,
+                        });
+                      }}
+                      className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-neutral-300 transition-all"
+                    >
+                      <FileText size={18} />
+                      Create Another Label
+                    </button>
+
+                    <Link href="/dashboard">
+                      <button className="w-full flex items-center justify-center gap-2 px-6 py-3 text-neutral-600 rounded-lg font-medium hover:bg-neutral-50 transition-all">
+                        <Home size={18} />
+                        Back to Dashboard
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Info Box */}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-blue-900">
+                    <strong>Next steps:</strong> Print and attach the label to your package. Drop it off at any PostNL location or schedule a pickup.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
