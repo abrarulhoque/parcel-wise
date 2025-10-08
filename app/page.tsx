@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import TrustBar from '@/components/TrustBar';
 import FeaturesSection from '@/components/FeaturesSection';
@@ -9,15 +10,18 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <TrustBar />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <DashboardPreview />
-      <TestimonialsSection />
-      <CTASection />
-      <Footer />
-    </main>
+    <>
+      <Navbar />
+      <main className="min-h-screen">
+        <HeroSection />
+        <TrustBar />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <DashboardPreview />
+        <TestimonialsSection />
+        <CTASection />
+        <Footer />
+      </main>
+    </>
   );
 }

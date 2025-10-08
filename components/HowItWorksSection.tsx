@@ -32,7 +32,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-primary-blue/5">
+    <section id="how-it-works" className="py-24 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-primary-blue/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -5,7 +5,7 @@ import { ArrowRight, Play } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-blue/5 via-neutral-50 to-secondary-blue/5">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-blue/5 via-neutral-50 to-secondary-blue/5 pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
