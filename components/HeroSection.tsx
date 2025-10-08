@@ -5,11 +5,11 @@ import { ArrowRight, Play } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-blue/5 via-white to-primary-orange/5">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-blue/5 via-neutral-50 to-secondary-blue/5">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 right-20 w-72 h-72 bg-primary-orange/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-72 h-72 bg-secondary-blue/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 30, 0],
@@ -22,7 +22,7 @@ export default function HeroSection() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-20 w-96 h-96 bg-secondary-blue/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-20 w-96 h-96 bg-primary-blue/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -40, 0],
@@ -52,7 +52,7 @@ export default function HeroSection() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Ship Smarter with{' '}
-              <span className="text-primary-orange">PostNL</span>{' '}
+              <span className="text-secondary-blue">PostNL</span>{' '}
               Integration
             </motion.h1>
 
@@ -72,7 +72,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <motion.button
-                className="group bg-primary-orange text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
+                className="group bg-secondary-blue text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -81,7 +81,7 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
-                className="group bg-white text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 border-2 border-primary-blue hover:bg-primary-blue hover:text-white transition-all duration-300"
+                className="group bg-white text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 border-2 border-accent-blue hover:bg-primary-blue hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -113,14 +113,14 @@ export default function HeroSection() {
                 }}
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-secondary-blue rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-white rounded"></div>
                   </div>
                   <div className="space-y-2">
                     <div className="h-4 bg-neutral-100 rounded w-3/4"></div>
                     <div className="h-4 bg-neutral-100 rounded w-1/2"></div>
                   </div>
-                  <div className="h-24 bg-gradient-to-br from-primary-orange to-secondary-blue rounded-lg opacity-20"></div>
+                  <div className="h-24 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg opacity-20"></div>
                   <div className="space-y-2">
                     <div className="h-3 bg-neutral-100 rounded w-full"></div>
                     <div className="h-3 bg-neutral-100 rounded w-5/6"></div>
@@ -149,8 +149,8 @@ export default function HeroSection() {
                       <div className="h-2 bg-neutral-100 rounded w-1/2"></div>
                     </div>
                   </div>
-                  <div className="h-32 bg-primary-orange/10 rounded-lg flex items-center justify-center">
-                    <div className="text-6xl font-bold text-primary-orange/30">📦</div>
+                  <div className="h-32 bg-secondary-blue/10 rounded-lg flex items-center justify-center">
+                    <div className="text-6xl font-bold text-secondary-blue/30">📦</div>
                   </div>
                   <div className="space-y-2">
                     <div className="h-3 bg-neutral-100 rounded w-full"></div>
@@ -162,7 +162,7 @@ export default function HeroSection() {
 
               {/* Decorative elements */}
               <motion.div
-                className="absolute w-16 h-16 bg-success rounded-lg"
+                className="absolute w-16 h-16 bg-accent-blue rounded-lg"
                 style={{ right: '10%', top: '20%' }}
                 animate={{
                   rotate: [0, 360],
@@ -176,7 +176,7 @@ export default function HeroSection() {
               />
 
               <motion.div
-                className="absolute w-12 h-12 bg-warning rounded-full"
+                className="absolute w-12 h-12 bg-secondary-blue rounded-full"
                 style={{ left: '5%', bottom: '20%' }}
                 animate={{
                   y: [0, -30, 0],

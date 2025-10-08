@@ -8,37 +8,37 @@ const features = [
     icon: Printer,
     title: 'Instant Label Creation',
     description: 'Create PostNL shipping labels in seconds. Bulk print up to 500 labels at once with automated address validation.',
-    color: 'from-primary-orange to-orange-600'
+    color: 'from-secondary-blue to-blue-600'
   },
   {
     icon: MapPin,
     title: 'Real-Time Tracking',
     description: 'Monitor all shipments in one dashboard. Automatic tracking updates keep you and your customers informed 24/7.',
-    color: 'from-secondary-blue to-blue-600'
+    color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingDown,
     title: 'Cost Optimization',
     description: 'Access discounted PostNL rates and smart shipping suggestions. Save up to 40% on domestic and international shipping.',
-    color: 'from-success to-green-600'
+    color: 'from-accent-blue to-primary-blue'
   },
   {
     icon: TrendingUp,
     title: 'Analytics & Insights',
     description: 'Track carrier performance, shipping costs, and delivery success rates. Make data-driven decisions to improve operations.',
-    color: 'from-purple-500 to-purple-700'
+    color: 'from-secondary-blue to-primary-blue'
   },
   {
     icon: Settings,
     title: 'Automated Workflows',
     description: 'Set rules to auto-assign shipping methods, generate labels, and send notifications. Reduce manual work by 70%.',
-    color: 'from-primary-blue to-blue-800'
+    color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: FileText,
     title: 'Invoice Management',
     description: 'View and download all shipping invoices in one place. Export reports for accounting and reconciliation.',
-    color: 'from-warning to-yellow-600'
+    color: 'from-accent-blue to-secondary-blue'
   },
 ];
 
@@ -75,7 +75,7 @@ export default function FeaturesSection() {
                 className="group relative bg-white rounded-xl p-8 border border-neutral-100 hover:border-transparent hover:shadow-2xl transition-all duration-300"
               >
                 {/* Gradient border on hover */}
-                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl`} />
+                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10 blur-xl`} />
 
                 <div className="relative z-10">
                   {/* Icon */}
@@ -88,7 +88,7 @@ export default function FeaturesSection() {
                   </motion.div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-primary-orange group-hover:to-secondary-blue transition-all duration-300">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-secondary-blue transition-all duration-300">
                     {feature.title}
                   </h3>
 

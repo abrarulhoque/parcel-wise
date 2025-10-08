@@ -9,7 +9,7 @@ export default function DashboardPreview() {
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-primary-orange/20 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-secondary-blue/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -42,7 +42,7 @@ export default function DashboardPreview() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-block bg-primary-orange/20 text-primary-orange px-4 py-1 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block bg-secondary-blue/20 text-secondary-blue px-4 py-1 rounded-full text-sm font-semibold mb-4">
             Live Demo
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -80,10 +80,10 @@ export default function DashboardPreview() {
               {/* Stats cards */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Package, label: 'Total Shipments', value: '1,247', change: '+12.5%', color: 'from-primary-orange to-orange-600' },
-                  { icon: TrendingUp, label: 'Active Orders', value: '89', change: 'Awaiting labels', color: 'from-secondary-blue to-blue-600' },
-                  { icon: Users, label: 'In Transit', value: '342', change: '98% on time', color: 'from-purple-500 to-purple-700' },
-                  { icon: DollarSign, label: 'Cost Savings', value: '€3,459', change: '38% savings', color: 'from-success to-green-600' },
+                  { icon: Package, label: 'Total Shipments', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
+                  { icon: TrendingUp, label: 'Active Orders', value: '89', change: 'Awaiting labels', color: 'from-primary-blue to-accent-blue' },
+                  { icon: Users, label: 'In Transit', value: '342', change: '98% on time', color: 'from-accent-blue to-secondary-blue' },
+                  { icon: DollarSign, label: 'Cost Savings', value: '€3,459', change: '38% savings', color: 'from-secondary-blue to-blue-600' },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
                   return (
@@ -101,7 +101,7 @@ export default function DashboardPreview() {
                       </div>
                       <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
                       <div className="text-xs text-neutral-400 mb-1">{stat.label}</div>
-                      <div className="text-xs text-success">{stat.change}</div>
+                      <div className="text-xs text-secondary-blue">{stat.change}</div>
                     </motion.div>
                   );
                 })}
@@ -127,7 +127,7 @@ export default function DashboardPreview() {
                     return (
                       <motion.div
                         key={i}
-                        className="flex-1 bg-gradient-to-t from-primary-orange to-secondary-blue rounded-t"
+                        className="flex-1 bg-gradient-to-t from-secondary-blue to-primary-blue rounded-t"
                         initial={{ height: 0 }}
                         whileInView={{ height: `${height}%` }}
                         viewport={{ once: true }}
@@ -159,12 +159,12 @@ export default function DashboardPreview() {
                       whileHover={{ x: 5 }}
                       className="flex items-center gap-4 bg-neutral-800/50 rounded-lg p-3 cursor-pointer hover:bg-neutral-800 transition-colors"
                     >
-                      <div className="w-2 h-2 rounded-full bg-success" />
+                      <div className="w-2 h-2 rounded-full bg-secondary-blue" />
                       <div className="flex-1">
                         <div className="h-3 bg-neutral-700 rounded w-24 mb-2" />
                         <div className="h-2 bg-neutral-700/50 rounded w-32" />
                       </div>
-                      <div className="px-3 py-1 bg-success/20 text-success text-xs rounded-full">
+                      <div className="px-3 py-1 bg-secondary-blue/20 text-secondary-blue text-xs rounded-full">
                         In Transit
                       </div>
                     </motion.div>
@@ -183,7 +183,7 @@ export default function DashboardPreview() {
             className="absolute -bottom-6 left-1/2 transform -translate-x-1/2"
           >
             <motion.button
-              className="group bg-gradient-to-r from-primary-orange to-secondary-blue text-white px-8 py-4 rounded-full font-semibold shadow-2xl flex items-center gap-2"
+              className="group bg-gradient-to-r from-secondary-blue to-primary-blue text-white px-8 py-4 rounded-full font-semibold shadow-2xl flex items-center gap-2"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

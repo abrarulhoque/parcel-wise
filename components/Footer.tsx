@@ -52,7 +52,7 @@ export default function Footer() {
           >
             {/* Logo */}
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-orange to-secondary-blue rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">P</span>
               </div>
               <span className="text-2xl font-bold">ParcelWise</span>
@@ -130,7 +130,7 @@ export default function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 rounded-full bg-neutral-800 hover:bg-gradient-to-br hover:from-primary-orange hover:to-secondary-blue flex items-center justify-center transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-neutral-800 hover:bg-gradient-to-br hover:from-secondary-blue hover:to-primary-blue flex items-center justify-center transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -154,7 +154,7 @@ export default function Footer() {
       </div>
 
       {/* Decorative bottom gradient */}
-      <div className="h-1 bg-gradient-to-r from-primary-orange via-secondary-blue to-success" />
+      <div className="h-1 bg-gradient-to-r from-secondary-blue via-primary-blue to-accent-blue" />
     </footer>
   );
 }

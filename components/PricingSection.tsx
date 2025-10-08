@@ -33,8 +33,8 @@ const pricingTiers = [
       'Custom branding',
     ],
     popular: true,
-    color: 'from-primary-orange to-secondary-blue',
-    borderColor: 'border-primary-orange',
+    color: 'from-secondary-blue to-primary-blue',
+    borderColor: 'border-secondary-blue',
   },
   {
     name: 'Enterprise',
@@ -50,8 +50,8 @@ const pricingTiers = [
       'Priority phone support',
     ],
     popular: false,
-    color: 'from-purple-600 to-blue-600',
-    borderColor: 'border-purple-200',
+    color: 'from-accent-blue to-secondary-blue',
+    borderColor: 'border-accent-blue',
   },
 ];
 
@@ -90,7 +90,7 @@ export default function PricingSection() {
               {/* Popular badge */}
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-primary-orange to-secondary-blue text-white px-6 py-1 rounded-full text-sm font-semibold shadow-lg">
+                  <div className="bg-gradient-to-r from-secondary-blue to-primary-blue text-white px-6 py-1 rounded-full text-sm font-semibold shadow-lg">
                     Most Popular
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function PricingSection() {
               {/* Decorative element */}
               {tier.popular && (
                 <motion.div
-                  className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-br from-primary-orange/20 to-secondary-blue/20 blur-2xl"
+                  className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-br from-secondary-blue/20 to-primary-blue/20 blur-2xl"
                   animate={{
                     scale: [1, 1.05, 1],
                     opacity: [0.5, 0.8, 0.5],

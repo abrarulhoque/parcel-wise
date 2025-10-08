@@ -10,18 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          orange: '#FF6200',
-          blue: '#003082',
+          blue: '#2B5A87',
         },
         secondary: {
-          blue: '#0066CC',
+          blue: '#4A8FDB',
+        },
+        accent: {
+          blue: '#3D5E7C',
         },
         success: '#10B981',
         warning: '#F59E0B',
         error: '#EF4444',
         neutral: {
-          50: '#F9FAFB',
-          100: '#E5E7EB',
+          50: '#F5F8FA',
+          100: '#E8EEF3',
           500: '#6B7280',
           900: '#1F2937',
         }

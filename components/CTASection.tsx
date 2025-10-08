@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-blue via-secondary-blue to-primary-orange relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-primary-blue via-accent-blue to-secondary-blue relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -124,7 +124,7 @@ export default function CTASection() {
               >
                 {/* Animated background on hover */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-orange to-warning"
+                  className="absolute inset-0 bg-gradient-to-r from-secondary-blue to-primary-blue"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}

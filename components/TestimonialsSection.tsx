@@ -89,12 +89,12 @@ export default function TestimonialsSection() {
                 transition={{ duration: 0.5 }}
                 className={`relative bg-gradient-to-br from-white to-neutral-50 rounded-2xl p-8 border-2 ${
                   index === 0
-                    ? 'border-primary-orange shadow-2xl scale-105'
+                    ? 'border-secondary-blue shadow-2xl scale-105'
                     : 'border-neutral-100 shadow-lg opacity-75'
                 } transition-all duration-500`}
               >
                 {/* Quote mark decoration */}
-                <div className="absolute top-6 right-6 text-6xl text-primary-orange/10 font-serif">
+                <div className="absolute top-6 right-6 text-6xl text-secondary-blue/10 font-serif">
                   "
                 </div>
 
@@ -107,7 +107,7 @@ export default function TestimonialsSection() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.1, duration: 0.3 }}
                     >
-                      <Star className="text-warning fill-warning" size={20} />
+                      <Star className="text-secondary-blue fill-secondary-blue" size={20} />
                     </motion.div>
                   ))}
                 </div>
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary-orange to-secondary-blue flex items-center justify-center text-3xl shadow-lg">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue flex items-center justify-center text-3xl shadow-lg">
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
                 {/* Decorative gradient */}
                 {index === 0 && (
                   <motion.div
-                    className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-br from-primary-orange/20 to-secondary-blue/20 blur-2xl"
+                    className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-br from-secondary-blue/20 to-primary-blue/20 blur-2xl"
                     animate={{
                       scale: [1, 1.05, 1],
                       opacity: [0.5, 0.8, 0.5],
@@ -158,7 +158,7 @@ export default function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4">
             <motion.button
               onClick={prev}
-              className="w-12 h-12 rounded-full bg-white border-2 border-neutral-200 flex items-center justify-center hover:border-primary-orange hover:bg-primary-orange hover:text-white transition-all duration-300 shadow-lg"
+              className="w-12 h-12 rounded-full bg-white border-2 border-neutral-200 flex items-center justify-center hover:border-secondary-blue hover:bg-secondary-blue hover:text-white transition-all duration-300 shadow-lg"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -173,7 +173,7 @@ export default function TestimonialsSection() {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'w-8 bg-primary-orange'
+                      ? 'w-8 bg-secondary-blue'
                       : 'w-2 bg-neutral-300 hover:bg-neutral-400'
                   }`}
                 />
@@ -182,7 +182,7 @@ export default function TestimonialsSection() {
 
             <motion.button
               onClick={next}
-              className="w-12 h-12 rounded-full bg-white border-2 border-neutral-200 flex items-center justify-center hover:border-primary-orange hover:bg-primary-orange hover:text-white transition-all duration-300 shadow-lg"
+              className="w-12 h-12 rounded-full bg-white border-2 border-neutral-200 flex items-center justify-center hover:border-secondary-blue hover:bg-secondary-blue hover:text-white transition-all duration-300 shadow-lg"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -213,7 +213,7 @@ export default function TestimonialsSection() {
               transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
               className="text-center"
             >
-              <div className="text-3xl lg:text-4xl font-bold text-primary-orange mb-2">
+              <div className="text-3xl lg:text-4xl font-bold text-secondary-blue mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-neutral-500">
