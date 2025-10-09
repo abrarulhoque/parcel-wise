@@ -12,7 +12,6 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'Functies', href: '#features' },
     { name: 'Hoe het werkt', href: '#how-it-works' },
-    { name: 'Testimonials', href: '#testimonials' },
   ];
 
   return (

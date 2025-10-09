@@ -24,20 +24,20 @@ const features = [
   },
   {
     icon: TrendingUp,
-    title: 'Analytics & inzichten',
-    description: 'Volg vervoerdersprestaties, verzendkosten en leveringssuccespercentages. Neem datagedreven beslissingen om activiteiten te verbeteren.',
+    title: 'Data & Inzichten',
+    description: 'Krijg duidelijk inzicht in vervoerdersprestaties, verzendkosten en afleveringssucces. Maak datagedreven keuzes om je resultaten te verbeteren.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: Settings,
     title: 'Geautomatiseerde workflows',
-    description: 'Stel regels in om automatisch verzendmethoden toe te wijzen, labels te genereren en meldingen te verzenden. Verminder handmatig werk met 70%.',
+    description: 'Regel verzendmethoden en meldingen efficiënt en behoud volledige controle over handmatige labelaanmaak.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: FileText,
     title: 'Factuurbeheer',
-    description: 'Bekijk en download alle verzendfacturen op één plek. Exporteer rapporten voor boekhouding en reconciliatie.',
+    description: 'Bekijk en download verzendfacturen op één plek. Exporteer eenvoudig rapporten voor je boekhouding.',
     color: 'from-primary-blue to-accent-blue'
   },
 ];
