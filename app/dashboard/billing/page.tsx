@@ -24,15 +24,15 @@ export default function BillingPage() {
   };
 
   const labelPricing = [
-    { method: 'PostNL Standard', price: '€6.95', description: '2-3 business days delivery' },
-    { method: 'PostNL Next Day', price: '€8.95', description: 'Next business day delivery' },
-    { method: 'PostNL Same Day', price: '€12.95', description: 'Same day delivery (order before 12 PM)' },
+    { method: 'PostNL Standard', price: '€6.95', description: '2-3 werkdagen bezorging' },
+    { method: 'PostNL Next Day', price: '€8.95', description: 'Volgende werkdag bezorging' },
+    { method: 'PostNL Same Day', price: '€12.95', description: 'Zelfde dag bezorging (bestellen voor 12:00)' },
   ];
 
   const additionalServices = [
-    { service: 'Extra Insurance', price: '€2.50', description: 'Coverage up to €500' },
-    { service: 'Signature Required', price: '€0.50', description: 'Proof of delivery signature' },
-    { service: 'Age Verification (18+)', price: '€1.00', description: 'Age verification on delivery' },
+    { service: 'Extra verzekering', price: '€2.50', description: 'Dekking tot €500' },
+    { service: 'Handtekening vereist', price: '€0.50', description: 'Bewijs van aflevering handtekening' },
+    { service: 'Leeftijdsverificatie (18+)', price: '€1.00', description: 'Leeftijdsverificatie bij bezorging' },
   ];
 
   const invoices = [
@@ -64,11 +64,11 @@ export default function BillingPage() {
     switch (status) {
       case 'paid':
       case 'completed':
-        return { bg: 'bg-success/10', text: 'text-success', icon: CheckCircle, label: status === 'paid' ? 'Paid' : 'Completed' };
+        return { bg: 'bg-success/10', text: 'text-success', icon: CheckCircle, label: status === 'paid' ? 'Betaald' : 'Voltooid' };
       case 'pending':
-        return { bg: 'bg-warning/10', text: 'text-warning', icon: Clock, label: 'Pending' };
+        return { bg: 'bg-warning/10', text: 'text-warning', icon: Clock, label: 'In behandeling' };
       case 'failed':
-        return { bg: 'bg-error/10', text: 'text-error', icon: AlertCircle, label: 'Failed' };
+        return { bg: 'bg-error/10', text: 'text-error', icon: AlertCircle, label: 'Mislukt' };
       default:
         return { bg: 'bg-neutral-100', text: 'text-neutral-600', icon: Clock, label: status };
     }
@@ -79,8 +79,8 @@ export default function BillingPage() {
       <div className="space-y-6">
         {/* Page Header */}
         <div>
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Billing & Payments</h1>
-          <p className="text-neutral-600">Pay-as-you-go pricing - only pay for the labels you create</p>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Facturering</h1>
+          <p className="text-neutral-600">Pay-as-you-go prijzen - betaal alleen voor de labels die je aanmaakt</p>
         </div>
 
         {/* Account Balance Card */}
@@ -93,28 +93,28 @@ export default function BillingPage() {
             <div className="flex items-start justify-between mb-6">
               <div>
                 <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-3">
-                  Account Balance
+                  Accountsaldo
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-5xl font-bold">€{accountBalance.current.toFixed(2)}</span>
                 </div>
-                <p className="text-white/80 text-sm">Last top-up: {accountBalance.lastTopUp}</p>
+                <p className="text-white/80 text-sm">Laatste opwaardering: {accountBalance.lastTopUp}</p>
               </div>
               <Wallet size={48} className="text-white/30" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-white/80 text-sm mb-1">Auto-Recharge</div>
-                <div className="font-semibold">{accountBalance.autoRecharge ? 'Enabled' : 'Disabled'}</div>
+                <div className="text-white/80 text-sm mb-1">Automatisch opwaarderen</div>
+                <div className="font-semibold">{accountBalance.autoRecharge ? 'Ingeschakeld' : 'Uitgeschakeld'}</div>
                 <div className="text-xs text-white/70 mt-1">
-                  When balance drops below €{accountBalance.rechargeThreshold}
+                  Wanneer saldo onder €{accountBalance.rechargeThreshold} komt
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-white/80 text-sm mb-1">Recharge Amount</div>
+                <div className="text-white/80 text-sm mb-1">Opwaarderingsbedrag</div>
                 <div className="font-semibold">€{accountBalance.rechargeAmount}</div>
-                <div className="text-xs text-white/70 mt-1">Automatic top-up amount</div>
+                <div className="text-xs text-white/70 mt-1">Automatisch opwaarderingsbedrag</div>
               </div>
             </div>
 
@@ -124,10 +124,10 @@ export default function BillingPage() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-white text-secondary-blue rounded-lg font-semibold hover:shadow-lg transition-all"
               >
-                Add Funds
+                Saldo opwaarderen
               </motion.button>
               <button className="px-6 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all">
-                Configure Auto-Recharge
+                Auto-opwaarderen configureren
               </button>
             </div>
           </motion.div>
@@ -141,26 +141,26 @@ export default function BillingPage() {
           >
             <h3 className="font-semibold text-neutral-900 mb-4 flex items-center gap-2">
               <Package className="text-secondary-blue" size={20} />
-              This Month
+              Deze maand
             </h3>
             <div className="space-y-4">
               <div>
-                <div className="text-sm text-neutral-600 mb-1">Labels Created</div>
+                <div className="text-sm text-neutral-600 mb-1">Labels aangemaakt</div>
                 <div className="text-2xl font-bold text-neutral-900">{currentMonthStats.labelsCreated}</div>
               </div>
               <div>
-                <div className="text-sm text-neutral-600 mb-1">Total Spent</div>
+                <div className="text-sm text-neutral-600 mb-1">Totaal uitgegeven</div>
                 <div className="text-2xl font-bold text-neutral-900">€{currentMonthStats.totalSpent.toFixed(2)}</div>
               </div>
               <div>
-                <div className="text-sm text-neutral-600 mb-1">Average Cost per Label</div>
+                <div className="text-sm text-neutral-600 mb-1">Gemiddelde kosten per label</div>
                 <div className="text-2xl font-bold text-neutral-900">€{currentMonthStats.averageCost.toFixed(2)}</div>
               </div>
               <div className="pt-3 border-t border-neutral-100">
                 <div className="flex items-center gap-2 text-sm">
                   <TrendingUp className="text-success" size={16} />
                   <span className="text-neutral-600">
-                    {((currentMonthStats.totalSpent - currentMonthStats.lastMonth) / currentMonthStats.lastMonth * 100).toFixed(1)}% vs last month
+                    {((currentMonthStats.totalSpent - currentMonthStats.lastMonth) / currentMonthStats.lastMonth * 100).toFixed(1)}% vs vorige maand
                   </span>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function BillingPage() {
           >
             <h3 className="font-semibold text-neutral-900 mb-4 flex items-center gap-2">
               <DollarSign className="text-secondary-blue" size={20} />
-              Shipping Label Pricing
+              Verzendlabel prijzen
             </h3>
             <div className="space-y-3">
               {labelPricing.map((item, index) => (
@@ -199,7 +199,7 @@ export default function BillingPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h3 className="font-semibold text-neutral-900 mb-4">Additional Services</h3>
+            <h3 className="font-semibold text-neutral-900 mb-4">Aanvullende diensten</h3>
             <div className="space-y-3">
               {additionalServices.map((item, index) => (
                 <div key={index} className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
@@ -224,7 +224,7 @@ export default function BillingPage() {
                 : 'text-neutral-500 hover:text-neutral-700'
             }`}
           >
-            Transaction History
+            Transactiegeschiedenis
           </button>
           <button
             onClick={() => setActiveTab('invoices')}
@@ -234,7 +234,7 @@ export default function BillingPage() {
                 : 'text-neutral-500 hover:text-neutral-700'
             }`}
           >
-            Monthly Invoices
+            Maandelijkse facturen
           </button>
           <button
             onClick={() => setActiveTab('payment-methods')}
@@ -244,7 +244,7 @@ export default function BillingPage() {
                 : 'text-neutral-500 hover:text-neutral-700'
             }`}
           >
-            Payment Methods
+            Betaalmethoden
           </button>
         </div>
 
@@ -259,11 +259,11 @@ export default function BillingPage() {
               <table className="w-full">
                 <thead className="bg-neutral-50 border-b border-neutral-100">
                   <tr>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Transaction ID</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Date</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Description</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Payment Method</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Amount</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Transactie ID</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Datum</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Omschrijving</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Betaalmethode</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Bedrag</th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Status</th>
                   </tr>
                 </thead>
@@ -315,13 +315,13 @@ export default function BillingPage() {
               <table className="w-full">
                 <thead className="bg-neutral-50 border-b border-neutral-100">
                   <tr>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Invoice ID</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Date</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Period</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Factuur ID</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Datum</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Periode</th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Items</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Amount</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Bedrag</th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Status</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Actions</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Acties</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-100">
@@ -350,7 +350,7 @@ export default function BillingPage() {
                         <td className="px-6 py-4">
                           <button className="flex items-center gap-1 text-secondary-blue hover:text-primary-blue font-medium text-sm">
                             <Download size={16} />
-                            Download
+                            Downloaden
                           </button>
                         </td>
                       </motion.tr>
@@ -371,7 +371,7 @@ export default function BillingPage() {
           >
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
               <p className="text-sm text-blue-900">
-                <strong>Note:</strong> Payment methods are used for account top-ups and auto-recharge. You only pay for the shipping labels you create.
+                <strong>Let op:</strong> Betaalmethoden worden gebruikt voor account opwaarderingen en automatisch opwaarderen. Je betaalt alleen voor de verzendlabels die je aanmaakt.
               </p>
             </div>
 
@@ -393,21 +393,21 @@ export default function BillingPage() {
                         <h3 className="font-semibold text-neutral-900">{method.type} •••• {method.last4}</h3>
                         {method.isDefault && (
                           <span className="px-2 py-0.5 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded-full">
-                            Default
+                            Standaard
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-neutral-500">Expires {method.expiry}</p>
+                      <p className="text-sm text-neutral-500">Verloopt {method.expiry}</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
                     {!method.isDefault && (
                       <button className="px-4 py-2 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
-                        Set as Default
+                        Instellen als standaard
                       </button>
                     )}
                     <button className="px-4 py-2 border-2 border-error/20 text-error rounded-lg font-medium hover:bg-error/10 transition-all">
-                      Remove
+                      Verwijderen
                     </button>
                   </div>
                 </div>
@@ -422,7 +422,7 @@ export default function BillingPage() {
               className="w-full p-6 border-2 border-dashed border-neutral-300 rounded-xl text-neutral-600 hover:border-secondary-blue hover:text-secondary-blue transition-all flex items-center justify-center gap-2 font-medium"
             >
               <CreditCard size={20} />
-              Add New Payment Method
+              Nieuwe betaalmethode toevoegen
             </motion.button>
           </motion.div>
         )}

@@ -9,30 +9,30 @@ export default function DashboardPage() {
   const stats = [
     {
       icon: Package,
-      label: 'Total Shipments',
+      label: 'Totaal verzendingen',
       value: '1,247',
-      change: '+12.5% from last month',
+      change: '+12.5% ten opzichte van vorige maand',
       color: 'from-secondary-blue to-primary-blue'
     },
     {
       icon: Clock,
-      label: 'Active Orders',
+      label: 'Actieve bestellingen',
       value: '89',
-      change: 'Awaiting label creation',
+      change: 'In afwachting van label aanmaak',
       color: 'from-primary-blue to-accent-blue'
     },
     {
       icon: Truck,
-      label: 'In Transit',
+      label: 'Onderweg',
       value: '342',
-      change: '98% on time delivery',
+      change: '98% op tijd bezorgd',
       color: 'from-accent-blue to-secondary-blue'
     },
     {
       icon: DollarSign,
-      label: 'Cost Savings',
+      label: 'Kostenbesparingen',
       value: '€3,459',
-      change: '38% savings this month',
+      change: '38% besparing deze maand',
       color: 'from-secondary-blue to-blue-600'
     },
   ];
@@ -54,19 +54,19 @@ export default function DashboardPage() {
   }));
 
   const recentActivity = [
-    { text: 'Order #12457 delivered successfully', time: '5 min ago', type: 'success' },
-    { text: '5 new orders imported', time: '15 min ago', type: 'info' },
-    { text: 'Label created for Order #12458', time: '1 hour ago', type: 'info' },
-    { text: 'Invoice #INV-2025-045 available', time: '2 hours ago', type: 'info' },
+    { text: 'Bestelling #12457 succesvol afgeleverd', time: '5 min geleden', type: 'success' },
+    { text: '5 nieuwe bestellingen geïmporteerd', time: '15 min geleden', type: 'info' },
+    { text: 'Label aangemaakt voor bestelling #12458', time: '1 uur geleden', type: 'info' },
+    { text: 'Factuur #INV-2025-045 beschikbaar', time: '2 uur geleden', type: 'info' },
   ];
 
   const getStatusBadge = (status: string) => {
     const badges = {
-      'pending': { bg: 'bg-warning/10', text: 'text-warning', label: 'Pending' },
-      'label-created': { bg: 'bg-secondary-blue/10', text: 'text-secondary-blue', label: 'Label Created' },
-      'in-transit': { bg: 'bg-primary-blue/10', text: 'text-primary-blue', label: 'In Transit' },
-      'delivered': { bg: 'bg-success/10', text: 'text-success', label: 'Delivered' },
-      'exception': { bg: 'bg-error/10', text: 'text-error', label: 'Exception' },
+      'pending': { bg: 'bg-warning/10', text: 'text-warning', label: 'In behandeling' },
+      'label-created': { bg: 'bg-secondary-blue/10', text: 'text-secondary-blue', label: 'Label aangemaakt' },
+      'in-transit': { bg: 'bg-primary-blue/10', text: 'text-primary-blue', label: 'Onderweg' },
+      'delivered': { bg: 'bg-success/10', text: 'text-success', label: 'Afgeleverd' },
+      'exception': { bg: 'bg-error/10', text: 'text-error', label: 'Uitzondering' },
     };
     return badges[status as keyof typeof badges] || badges.pending;
   };
@@ -76,8 +76,8 @@ export default function DashboardPage() {
       <div className="space-y-8">
         {/* Page Header */}
         <div>
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Dashboard Overview</h1>
-          <p className="text-neutral-600">Welcome back! Here's what's happening with your shipments.</p>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Overzicht</h1>
+          <p className="text-neutral-600">Welkom terug! Dit is wat er gebeurt met je verzendingen.</p>
         </div>
 
         {/* Stats Grid */}
@@ -111,25 +111,25 @@ export default function DashboardPage() {
           transition={{ delay: 0.4 }}
           className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
         >
-          <h2 className="text-lg font-semibold text-neutral-900 mb-4">Quick Actions</h2>
+          <h2 className="text-lg font-semibold text-neutral-900 mb-4">Snelle acties</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Link href="/dashboard/create-label">
               <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
                 <Plus size={20} />
-                Create Label
+                Label aanmaken
               </button>
             </Link>
             <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
               <Upload size={20} />
-              Import Orders
+              Bestellingen importeren
             </button>
             <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
               <Printer size={20} />
-              Bulk Print
+              Bulk printen
             </button>
             <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue hover:text-secondary-blue transition-all">
               <FileText size={20} />
-              Reports
+              Rapporten
             </button>
           </div>
         </motion.div>
@@ -145,12 +145,12 @@ export default function DashboardPage() {
           >
             <div className="p-6 border-b border-neutral-100 flex items-center justify-between">
               <div>
-                <h2 className="text-lg font-semibold text-neutral-900">Recent Orders</h2>
-                <p className="text-sm text-neutral-500 mt-1">Showing 8 of 89 orders</p>
+                <h2 className="text-lg font-semibold text-neutral-900">Recente bestellingen</h2>
+                <p className="text-sm text-neutral-500 mt-1">8 van 89 bestellingen weergegeven</p>
               </div>
               <Link href="/dashboard/orders">
                 <button className="text-secondary-blue hover:text-primary-blue font-medium text-sm">
-                  View All →
+                  Bekijk alles →
                 </button>
               </Link>
             </div>
@@ -158,11 +158,11 @@ export default function DashboardPage() {
               <table className="w-full">
                 <thead className="bg-neutral-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Order ID</th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Customer</th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Destination</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Bestelling ID</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Klant</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Bestemming</th>
                     <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Status</th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Method</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-neutral-600 uppercase">Methode</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-100">
@@ -194,7 +194,7 @@ export default function DashboardPage() {
             transition={{ delay: 0.6 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Recent Activity</h2>
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Recente activiteit</h2>
             <div className="space-y-4">
               {recentActivity.map((activity, index) => (
                 <div key={index} className="flex gap-3">
@@ -226,13 +226,13 @@ export default function DashboardPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-lg font-semibold text-neutral-900">Shipping Activity</h2>
-              <p className="text-sm text-neutral-500 mt-1">Last 30 days</p>
+              <h2 className="text-lg font-semibold text-neutral-900">Verzendactiviteit</h2>
+              <p className="text-sm text-neutral-500 mt-1">Laatste 30 dagen</p>
             </div>
             <div className="flex gap-2">
-              <button className="px-3 py-1.5 bg-secondary-blue text-white rounded-lg text-sm font-medium">Day</button>
+              <button className="px-3 py-1.5 bg-secondary-blue text-white rounded-lg text-sm font-medium">Dag</button>
               <button className="px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-lg text-sm font-medium hover:bg-neutral-200">Week</button>
-              <button className="px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-lg text-sm font-medium hover:bg-neutral-200">Month</button>
+              <button className="px-3 py-1.5 bg-neutral-100 text-neutral-600 rounded-lg text-sm font-medium hover:bg-neutral-200">Maand</button>
             </div>
           </div>
           <div className="h-64 flex items-end justify-between gap-1">
@@ -247,7 +247,7 @@ export default function DashboardPage() {
                     style={{ minHeight: '4px' }}
                   >
                     <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">
-                      {data.shipments} shipments
+                      {data.shipments} verzendingen
                     </div>
                   </motion.div>
                 </div>

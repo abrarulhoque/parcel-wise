@@ -10,10 +10,10 @@ export default function HelpPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const quickLinks = [
-    { title: 'Getting Started Guide', icon: BookOpen, description: 'Learn the basics of ParcelWise', color: 'from-secondary-blue to-primary-blue' },
-    { title: 'Video Tutorials', icon: Video, description: 'Watch step-by-step video guides', color: 'from-primary-blue to-accent-blue' },
-    { title: 'API Documentation', icon: FileText, description: 'Integrate with our API', color: 'from-accent-blue to-secondary-blue' },
-    { title: 'Contact Support', icon: MessageCircle, description: 'Get help from our team', color: 'from-secondary-blue to-blue-600' },
+    { title: 'Aan de slag handleiding', icon: BookOpen, description: 'Leer de basis van ParcelWise', color: 'from-secondary-blue to-primary-blue' },
+    { title: 'Video tutorials', icon: Video, description: 'Bekijk stapsgewijze video handleidingen', color: 'from-primary-blue to-accent-blue' },
+    { title: 'API documentatie', icon: FileText, description: 'Integreer met onze API', color: 'from-accent-blue to-secondary-blue' },
+    { title: 'Contact opnemen', icon: MessageCircle, description: 'Krijg hulp van ons team', color: 'from-secondary-blue to-blue-600' },
   ];
 
   const faqs = [
@@ -89,35 +89,35 @@ export default function HelpPage() {
 
   const supportOptions = [
     {
-      title: 'Email Support',
+      title: 'E-mail ondersteuning',
       icon: Mail,
-      description: 'Send us an email and we\'ll respond within 24 hours',
+      description: 'Stuur ons een e-mail en we reageren binnen 24 uur',
       action: 'support@parcelwise.com',
       color: 'text-secondary-blue'
     },
     {
-      title: 'Live Chat',
+      title: 'Live chat',
       icon: MessageCircle,
-      description: 'Chat with our support team (Mon-Fri, 9AM-6PM)',
-      action: 'Start Chat',
+      description: 'Chat met ons ondersteuningsteam (ma-vr, 9-18 uur)',
+      action: 'Chat starten',
       color: 'text-primary-blue'
     },
     {
-      title: 'Phone Support',
+      title: 'Telefoonondersteuning',
       icon: Phone,
-      description: 'Call us for urgent issues (Professional plan)',
+      description: 'Bel ons voor urgente problemen (Professional plan)',
       action: '+31 20 123 4567',
       color: 'text-accent-blue'
     },
   ];
 
   const resources = [
-    { title: 'Knowledge Base', link: '#', description: 'Browse our comprehensive guides and articles' },
-    { title: 'API Documentation', link: '#', description: 'Technical documentation for developers' },
-    { title: 'Video Tutorials', link: '#', description: 'Watch step-by-step video guides' },
-    { title: 'Community Forum', link: '#', description: 'Connect with other ParcelWise users' },
-    { title: 'System Status', link: '#', description: 'Check our current system status and uptime' },
-    { title: 'Release Notes', link: '#', description: 'Stay updated with new features and improvements' },
+    { title: 'Kennisbank', link: '#', description: 'Blader door onze uitgebreide handleidingen en artikelen' },
+    { title: 'API documentatie', link: '#', description: 'Technische documentatie voor ontwikkelaars' },
+    { title: 'Video tutorials', link: '#', description: 'Bekijk stapsgewijze video handleidingen' },
+    { title: 'Community forum', link: '#', description: 'Maak contact met andere ParcelWise gebruikers' },
+    { title: 'Systeem status', link: '#', description: 'Bekijk onze huidige systeemstatus en uptime' },
+    { title: 'Release notes', link: '#', description: 'Blijf op de hoogte van nieuwe functies en verbeteringen' },
   ];
 
   const filteredFaqs = faqs.map(category => ({
@@ -133,8 +133,8 @@ export default function HelpPage() {
       <div className="space-y-8">
         {/* Page Header */}
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-3">How can we help you?</h1>
-          <p className="text-lg text-neutral-600">Find answers, guides, and support resources</p>
+          <h1 className="text-4xl font-bold text-neutral-900 mb-3">Hoe kunnen we je helpen?</h1>
+          <p className="text-lg text-neutral-600">Vind antwoorden, handleidingen en ondersteuningsbronnen</p>
         </div>
 
         {/* Search Bar */}
@@ -147,7 +147,7 @@ export default function HelpPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" size={24} />
             <input
               type="text"
-              placeholder="Search for help articles, guides, or FAQs..."
+              placeholder="Zoeken naar helpartikelen, handleidingen of veelgestelde vragen..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 border-2 border-neutral-200 rounded-xl text-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none shadow-sm"
@@ -187,13 +187,13 @@ export default function HelpPage() {
         >
           <div className="flex items-center gap-3 mb-6">
             <HelpCircle className="text-secondary-blue" size={28} />
-            <h2 className="text-2xl font-bold text-neutral-900">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold text-neutral-900">Veelgestelde vragen</h2>
           </div>
 
           {filteredFaqs.length === 0 ? (
             <div className="text-center py-12">
               <Search className="mx-auto text-neutral-300 mb-3" size={48} />
-              <p className="text-neutral-500">No FAQs found matching your search</p>
+              <p className="text-neutral-500">Geen veelgestelde vragen gevonden voor je zoekopdracht</p>
             </div>
           ) : (
             <div className="space-y-8">
@@ -255,8 +255,8 @@ export default function HelpPage() {
           transition={{ delay: 0.5 }}
           className="bg-gradient-to-br from-secondary-blue to-primary-blue rounded-xl p-8 text-white"
         >
-          <h2 className="text-2xl font-bold mb-2">Still need help?</h2>
-          <p className="text-white/90 mb-8">Our support team is here to assist you</p>
+          <h2 className="text-2xl font-bold mb-2">Nog steeds hulp nodig?</h2>
+          <p className="text-white/90 mb-8">Ons ondersteuningsteam staat klaar om je te helpen</p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {supportOptions.map((option, index) => {
@@ -288,7 +288,7 @@ export default function HelpPage() {
           transition={{ delay: 0.6 }}
           className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100"
         >
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Additional Resources</h2>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Aanvullende bronnen</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {resources.map((resource, index) => (
               <motion.a
@@ -317,14 +317,14 @@ export default function HelpPage() {
           transition={{ delay: 0.7 }}
           className="bg-neutral-50 rounded-xl p-8 text-center border border-neutral-200"
         >
-          <h3 className="text-xl font-semibold text-neutral-900 mb-2">Was this helpful?</h3>
-          <p className="text-neutral-600 mb-6">Help us improve our documentation</p>
+          <h3 className="text-xl font-semibold text-neutral-900 mb-2">Was dit nuttig?</h3>
+          <p className="text-neutral-600 mb-6">Help ons onze documentatie te verbeteren</p>
           <div className="flex items-center justify-center gap-3">
             <button className="px-6 py-3 bg-white border-2 border-neutral-200 rounded-lg font-medium text-neutral-700 hover:border-success hover:text-success transition-all">
-              👍 Yes, helpful
+              👍 Ja, nuttig
             </button>
             <button className="px-6 py-3 bg-white border-2 border-neutral-200 rounded-lg font-medium text-neutral-700 hover:border-error hover:text-error transition-all">
-              👎 Needs improvement
+              👎 Kan beter
             </button>
           </div>
         </motion.div>

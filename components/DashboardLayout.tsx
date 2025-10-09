@@ -29,13 +29,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const menuItems = [
-    { icon: LayoutDashboard, label: 'Overview', href: '/dashboard' },
-    { icon: Package, label: 'Orders', href: '/dashboard/orders' },
-    { icon: Tag, label: 'Create Label', href: '/dashboard/create-label' },
+    { icon: LayoutDashboard, label: 'Overzicht', href: '/dashboard' },
+    { icon: Package, label: 'Bestellingen', href: '/dashboard/orders' },
+    { icon: Tag, label: 'Label aanmaken', href: '/dashboard/create-label' },
     { icon: MapPin, label: 'Tracking', href: '/dashboard/tracking' },
     { icon: BarChart3, label: 'Analytics', href: '/dashboard/analytics' },
-    { icon: CreditCard, label: 'Billing', href: '/dashboard/billing' },
-    { icon: Settings, label: 'Settings', href: '/dashboard/settings' },
+    { icon: CreditCard, label: 'Facturering', href: '/dashboard/billing' },
+    { icon: Settings, label: 'Instellingen', href: '/dashboard/settings' },
     { icon: HelpCircle, label: 'Help', href: '/dashboard/help' },
   ];
 
@@ -87,7 +87,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             </div>
             <div className="mt-3">
               <span className="inline-block px-3 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-semibold rounded-full">
-                Professional Plan
+                Professional abonnement
               </span>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               className="flex items-center gap-3 px-4 py-3 rounded-lg text-error hover:bg-error/10 transition-all"
             >
               <LogOut size={20} />
-              <span className="font-medium">Logout</span>
+              <span className="font-medium">Uitloggen</span>
             </Link>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
                   <input
                     type="text"
-                    placeholder="Search orders, tracking numbers..."
+                    placeholder="Zoek bestellingen, trackingnummers..."
                     className="w-full pl-10 pr-4 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                   />
                 </div>

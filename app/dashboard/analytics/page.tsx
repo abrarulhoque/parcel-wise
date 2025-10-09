@@ -10,7 +10,7 @@ export default function AnalyticsPage() {
 
   const kpiCards = [
     {
-      label: 'Total Revenue',
+      label: 'Totale omzet',
       value: '€24,567',
       change: '+18.2%',
       trend: 'up',
@@ -18,7 +18,7 @@ export default function AnalyticsPage() {
       color: 'from-secondary-blue to-primary-blue'
     },
     {
-      label: 'Total Shipments',
+      label: 'Totaal verzendingen',
       value: '1,247',
       change: '+12.5%',
       trend: 'up',
@@ -26,15 +26,15 @@ export default function AnalyticsPage() {
       color: 'from-primary-blue to-accent-blue'
     },
     {
-      label: 'Average Delivery Time',
-      value: '2.3 days',
+      label: 'Gemiddelde levertijd',
+      value: '2.3 dagen',
       change: '-8.4%',
       trend: 'down',
       icon: Truck,
       color: 'from-accent-blue to-secondary-blue'
     },
     {
-      label: 'Success Rate',
+      label: 'Succespercentage',
       value: '98.2%',
       change: '+2.1%',
       trend: 'up',
@@ -72,12 +72,12 @@ export default function AnalyticsPage() {
   ];
 
   const performanceMetrics = [
-    { metric: 'On-time Delivery', value: '98.2%', target: '95%', status: 'excellent' },
-    { metric: 'Customer Satisfaction', value: '4.8/5', target: '4.5/5', status: 'excellent' },
-    { metric: 'Return Rate', value: '2.1%', target: '<5%', status: 'good' },
-    { metric: 'Average Cost per Shipment', value: '€8.24', target: '€9.00', status: 'excellent' },
-    { metric: 'Damaged Packages', value: '0.3%', target: '<1%', status: 'excellent' },
-    { metric: 'Failed Deliveries', value: '1.8%', target: '<3%', status: 'good' },
+    { metric: 'Op tijd bezorgd', value: '98.2%', target: '95%', status: 'excellent' },
+    { metric: 'Klanttevredenheid', value: '4.8/5', target: '4.5/5', status: 'excellent' },
+    { metric: 'Retourpercentage', value: '2.1%', target: '<5%', status: 'good' },
+    { metric: 'Gemiddelde kosten per verzending', value: '€8.24', target: '€9.00', status: 'excellent' },
+    { metric: 'Beschadigde pakketten', value: '0.3%', target: '<1%', status: 'excellent' },
+    { metric: 'Mislukte leveringen', value: '1.8%', target: '<3%', status: 'good' },
   ];
 
   const maxShipments = Math.max(...monthlyData.map(d => d.shipments));
@@ -89,8 +89,8 @@ export default function AnalyticsPage() {
         {/* Page Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-neutral-900 mb-2">Analytics & Insights</h1>
-            <p className="text-neutral-600">Track your shipping performance and business metrics</p>
+            <h1 className="text-3xl font-bold text-neutral-900 mb-2">Analytics</h1>
+            <p className="text-neutral-600">Volg je verzendprestaties en bedrijfsstatistieken</p>
           </div>
           <div className="flex items-center gap-3">
             <select
@@ -98,10 +98,10 @@ export default function AnalyticsPage() {
               onChange={(e) => setTimeRange(e.target.value)}
               className="px-4 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
             >
-              <option value="7days">Last 7 Days</option>
-              <option value="30days">Last 30 Days</option>
-              <option value="90days">Last 90 Days</option>
-              <option value="year">This Year</option>
+              <option value="7days">Laatste 7 dagen</option>
+              <option value="30days">Laatste 30 dagen</option>
+              <option value="90days">Laatste 90 dagen</option>
+              <option value="year">Dit jaar</option>
             </select>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -109,7 +109,7 @@ export default function AnalyticsPage() {
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-medium hover:shadow-lg transition-all"
             >
               <Download size={18} />
-              Export Report
+              Rapport exporteren
             </motion.button>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function AnalyticsPage() {
                   kpi.trend === 'up' ? 'text-success' : 'text-error'
                 }`}>
                   {kpi.trend === 'up' ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
-                  <span>{kpi.change} from last month</span>
+                  <span>{kpi.change} ten opzichte van vorige maand</span>
                 </div>
               </motion.div>
             );
@@ -153,8 +153,8 @@ export default function AnalyticsPage() {
           >
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-lg font-semibold text-neutral-900">Shipments Overview</h2>
-                <p className="text-sm text-neutral-500 mt-1">Monthly shipment volume</p>
+                <h2 className="text-lg font-semibold text-neutral-900">Verzendingen overzicht</h2>
+                <p className="text-sm text-neutral-500 mt-1">Maandelijks verzendvolume</p>
               </div>
               <Package className="text-secondary-blue" size={24} />
             </div>
@@ -170,7 +170,7 @@ export default function AnalyticsPage() {
                       style={{ minHeight: '8px' }}
                     >
                       <div className="opacity-0 group-hover:opacity-100 absolute -top-12 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">
-                        {data.shipments} shipments
+                        {data.shipments} verzendingen
                       </div>
                     </motion.div>
                   </div>
@@ -189,8 +189,8 @@ export default function AnalyticsPage() {
           >
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-lg font-semibold text-neutral-900">Revenue Trends</h2>
-                <p className="text-sm text-neutral-500 mt-1">Monthly revenue in EUR</p>
+                <h2 className="text-lg font-semibold text-neutral-900">Omzettrends</h2>
+                <p className="text-sm text-neutral-500 mt-1">Maandelijkse omzet in EUR</p>
               </div>
               <DollarSign className="text-secondary-blue" size={24} />
             </div>
@@ -228,8 +228,8 @@ export default function AnalyticsPage() {
           >
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-lg font-semibold text-neutral-900">Top Destinations</h2>
-                <p className="text-sm text-neutral-500 mt-1">Most popular delivery locations</p>
+                <h2 className="text-lg font-semibold text-neutral-900">Top bestemmingen</h2>
+                <p className="text-sm text-neutral-500 mt-1">Meest populaire bezorglocaties</p>
               </div>
               <MapPin className="text-secondary-blue" size={24} />
             </div>
@@ -246,7 +246,7 @@ export default function AnalyticsPage() {
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-medium text-neutral-900">{dest.city}</span>
                       <div className="text-right">
-                        <div className="text-sm font-semibold text-neutral-900">{dest.count} orders</div>
+                        <div className="text-sm font-semibold text-neutral-900">{dest.count} bestellingen</div>
                         <div className="text-xs text-neutral-500">{dest.revenue}</div>
                       </div>
                     </div>
@@ -273,8 +273,8 @@ export default function AnalyticsPage() {
           >
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-lg font-semibold text-neutral-900">Shipping Methods</h2>
-                <p className="text-sm text-neutral-500 mt-1">Distribution by delivery speed</p>
+                <h2 className="text-lg font-semibold text-neutral-900">Verzendmethoden</h2>
+                <p className="text-sm text-neutral-500 mt-1">Verdeling per leversnelheid</p>
               </div>
               <Truck className="text-secondary-blue" size={24} />
             </div>
@@ -313,7 +313,7 @@ export default function AnalyticsPage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-neutral-900">1,247</div>
-                    <div className="text-xs text-neutral-500">Total</div>
+                    <div className="text-xs text-neutral-500">Totaal</div>
                   </div>
                 </div>
               </div>
@@ -357,8 +357,8 @@ export default function AnalyticsPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-lg font-semibold text-neutral-900">Performance Metrics</h2>
-              <p className="text-sm text-neutral-500 mt-1">Key performance indicators vs targets</p>
+              <h2 className="text-lg font-semibold text-neutral-900">Prestatiemetrieken</h2>
+              <p className="text-sm text-neutral-500 mt-1">Belangrijkste prestatie-indicatoren vs doelen</p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -377,11 +377,11 @@ export default function AnalyticsPage() {
                       ? 'bg-success/10 text-success'
                       : 'bg-primary-blue/10 text-primary-blue'
                   }`}>
-                    {metric.status}
+                    {metric.status === 'excellent' ? 'uitstekend' : 'goed'}
                   </span>
                 </div>
                 <div className="text-2xl font-bold text-neutral-900 mb-1">{metric.value}</div>
-                <div className="text-xs text-neutral-500">Target: {metric.target}</div>
+                <div className="text-xs text-neutral-500">Doel: {metric.target}</div>
               </motion.div>
             ))}
           </div>

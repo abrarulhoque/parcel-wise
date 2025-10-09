@@ -54,11 +54,11 @@ export default function SettingsPage() {
   };
 
   const tabs = [
-    { id: 'profile', label: 'Profile', icon: User },
-    { id: 'company', label: 'Company', icon: Building2 },
-    { id: 'notifications', label: 'Notifications', icon: Bell },
-    { id: 'security', label: 'Security', icon: Lock },
-    { id: 'preferences', label: 'Preferences', icon: Globe },
+    { id: 'profile', label: 'Profiel', icon: User },
+    { id: 'company', label: 'Bedrijf', icon: Building2 },
+    { id: 'notifications', label: 'Notificaties', icon: Bell },
+    { id: 'security', label: 'Beveiliging', icon: Lock },
+    { id: 'preferences', label: 'Voorkeuren', icon: Globe },
   ];
 
   return (
@@ -66,8 +66,8 @@ export default function SettingsPage() {
       <div className="space-y-6">
         {/* Page Header */}
         <div>
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Settings</h1>
-          <p className="text-neutral-600">Manage your account settings and preferences</p>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Instellingen</h1>
+          <p className="text-neutral-600">Beheer je accountinstellingen en voorkeuren</p>
         </div>
 
         {/* Tabs */}
@@ -98,7 +98,7 @@ export default function SettingsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Personal Information</h2>
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Persoonlijke informatie</h2>
             <div className="space-y-6">
               {/* Avatar */}
               <div className="flex items-center gap-6">
@@ -107,16 +107,16 @@ export default function SettingsPage() {
                 </div>
                 <div>
                   <button className="px-4 py-2 bg-secondary-blue text-white rounded-lg font-medium hover:shadow-lg transition-all">
-                    Change Avatar
+                    Avatar wijzigen
                   </button>
-                  <p className="text-sm text-neutral-500 mt-2">JPG, PNG or GIF. Max size 2MB.</p>
+                  <p className="text-sm text-neutral-500 mt-2">JPG, PNG of GIF. Max grootte 2MB.</p>
                 </div>
               </div>
 
               {/* Form */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">First Name</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Voornaam</label>
                   <input
                     type="text"
                     value={profileData.firstName}
@@ -125,7 +125,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Last Name</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Achternaam</label>
                   <input
                     type="text"
                     value={profileData.lastName}
@@ -134,7 +134,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Email Address</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">E-mailadres</label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
                     <input
@@ -146,7 +146,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Phone Number</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Telefoonnummer</label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
                     <input
@@ -158,7 +158,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Job Title</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Functietitel</label>
                   <input
                     type="text"
                     value={profileData.jobTitle}
@@ -177,7 +177,7 @@ export default function SettingsPage() {
                   className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
-                  {isSaving ? 'Saving...' : 'Save Changes'}
+                  {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
                 </motion.button>
               </div>
             </div>
@@ -191,11 +191,11 @@ export default function SettingsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Company Information</h2>
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Bedrijfsinformatie</h2>
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Company Name</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Bedrijfsnaam</label>
                   <input
                     type="text"
                     value={companyData.companyName}
@@ -204,7 +204,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">VAT Number</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">BTW-nummer</label>
                   <input
                     type="text"
                     value={companyData.vatNumber}
@@ -222,7 +222,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Street Address</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Straat en huisnummer</label>
                   <input
                     type="text"
                     value={companyData.address}
@@ -231,7 +231,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Postal Code</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Postcode</label>
                   <input
                     type="text"
                     value={companyData.postalCode}
@@ -240,7 +240,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">City</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Plaats</label>
                   <input
                     type="text"
                     value={companyData.city}
@@ -249,7 +249,7 @@ export default function SettingsPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Country</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Land</label>
                   <select
                     value={companyData.country}
                     onChange={(e) => setCompanyData({ ...companyData, country: e.target.value })}
@@ -272,7 +272,7 @@ export default function SettingsPage() {
                   className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
-                  {isSaving ? 'Saving...' : 'Save Changes'}
+                  {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
                 </motion.button>
               </div>
             </div>
@@ -286,21 +286,21 @@ export default function SettingsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Notification Preferences</h2>
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Notificatievoorkeuren</h2>
             <div className="space-y-8">
               {/* Email Notifications */}
               <div>
                 <h3 className="font-medium text-neutral-900 mb-4 flex items-center gap-2">
                   <Mail size={18} className="text-secondary-blue" />
-                  Email Notifications
+                  E-mail notificaties
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { key: 'emailOrderCreated', label: 'Order Created', description: 'Get notified when a new order is created' },
-                    { key: 'emailOrderDelivered', label: 'Order Delivered', description: 'Get notified when an order is delivered' },
-                    { key: 'emailOrderException', label: 'Delivery Exceptions', description: 'Get notified about delivery issues' },
-                    { key: 'emailWeeklyReport', label: 'Weekly Summary', description: 'Receive weekly analytics and performance reports' },
-                    { key: 'emailMonthlyReport', label: 'Monthly Report', description: 'Receive monthly business insights' },
+                    { key: 'emailOrderCreated', label: 'Bestelling aangemaakt', description: 'Ontvang een melding wanneer een nieuwe bestelling wordt aangemaakt' },
+                    { key: 'emailOrderDelivered', label: 'Bestelling afgeleverd', description: 'Ontvang een melding wanneer een bestelling wordt afgeleverd' },
+                    { key: 'emailOrderException', label: 'Bezorguitzonderingen', description: 'Ontvang een melding over bezorgproblemen' },
+                    { key: 'emailWeeklyReport', label: 'Weekoverzicht', description: 'Ontvang wekelijkse analytics en prestatierapporten' },
+                    { key: 'emailMonthlyReport', label: 'Maandrapport', description: 'Ontvang maandelijkse bedrijfsinzichten' },
                   ].map((item) => (
                     <div key={item.key} className="flex items-center justify-between py-3 border-b border-neutral-100 last:border-0">
                       <div>
@@ -325,13 +325,13 @@ export default function SettingsPage() {
               <div>
                 <h3 className="font-medium text-neutral-900 mb-4 flex items-center gap-2">
                   <Bell size={18} className="text-secondary-blue" />
-                  Push Notifications
+                  Push notificaties
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { key: 'pushOrderCreated', label: 'Order Created', description: 'Desktop notifications for new orders' },
-                    { key: 'pushOrderDelivered', label: 'Order Delivered', description: 'Desktop notifications for deliveries' },
-                    { key: 'pushOrderException', label: 'Delivery Exceptions', description: 'Instant alerts for issues' },
+                    { key: 'pushOrderCreated', label: 'Bestelling aangemaakt', description: 'Desktop notificaties voor nieuwe bestellingen' },
+                    { key: 'pushOrderDelivered', label: 'Bestelling afgeleverd', description: 'Desktop notificaties voor bezorgingen' },
+                    { key: 'pushOrderException', label: 'Bezorguitzonderingen', description: 'Directe meldingen voor problemen' },
                   ].map((item) => (
                     <div key={item.key} className="flex items-center justify-between py-3 border-b border-neutral-100 last:border-0">
                       <div>
@@ -361,7 +361,7 @@ export default function SettingsPage() {
                   className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
-                  {isSaving ? 'Saving...' : 'Save Changes'}
+                  {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
                 </motion.button>
               </div>
             </div>
@@ -377,61 +377,61 @@ export default function SettingsPage() {
           >
             {/* Change Password */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100">
-              <h2 className="text-lg font-semibold text-neutral-900 mb-6">Change Password</h2>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-6">Wachtwoord wijzigen</h2>
               <div className="space-y-4 max-w-md">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Current Password</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Huidig wachtwoord</label>
                   <input
                     type="password"
                     className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">New Password</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Nieuw wachtwoord</label>
                   <input
                     type="password"
                     className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Confirm New Password</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Bevestig nieuw wachtwoord</label>
                   <input
                     type="password"
                     className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                   />
                 </div>
                 <button className="px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
-                  Update Password
+                  Wachtwoord bijwerken
                 </button>
               </div>
             </div>
 
             {/* Two-Factor Authentication */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100">
-              <h2 className="text-lg font-semibold text-neutral-900 mb-2">Two-Factor Authentication</h2>
-              <p className="text-sm text-neutral-600 mb-6">Add an extra layer of security to your account</p>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-2">Tweefactorauthenticatie</h2>
+              <p className="text-sm text-neutral-600 mb-6">Voeg een extra beveiligingslaag toe aan je account</p>
               <button className="px-6 py-3 border-2 border-secondary-blue text-secondary-blue rounded-lg font-semibold hover:bg-secondary-blue hover:text-white transition-all">
-                Enable 2FA
+                2FA inschakelen
               </button>
             </div>
 
             {/* Active Sessions */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100">
-              <h2 className="text-lg font-semibold text-neutral-900 mb-6">Active Sessions</h2>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-6">Actieve sessies</h2>
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
                   <div>
-                    <div className="font-medium text-neutral-900">Chrome on macOS</div>
-                    <div className="text-sm text-neutral-500">Amsterdam, Netherlands • Current session</div>
+                    <div className="font-medium text-neutral-900">Chrome op macOS</div>
+                    <div className="text-sm text-neutral-500">Amsterdam, Nederland • Huidige sessie</div>
                   </div>
-                  <span className="text-xs text-success font-medium">Active now</span>
+                  <span className="text-xs text-success font-medium">Nu actief</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
                   <div>
-                    <div className="font-medium text-neutral-900">Safari on iPhone</div>
-                    <div className="text-sm text-neutral-500">Amsterdam, Netherlands • 2 hours ago</div>
+                    <div className="font-medium text-neutral-900">Safari op iPhone</div>
+                    <div className="text-sm text-neutral-500">Amsterdam, Nederland • 2 uur geleden</div>
                   </div>
-                  <button className="text-error text-sm font-medium hover:underline">Revoke</button>
+                  <button className="text-error text-sm font-medium hover:underline">Intrekken</button>
                 </div>
               </div>
             </div>
@@ -445,11 +445,11 @@ export default function SettingsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Application Preferences</h2>
+            <h2 className="text-lg font-semibold text-neutral-900 mb-6">Applicatievoorkeuren</h2>
             <div className="space-y-6 max-w-2xl">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Language</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Taal</label>
                   <select
                     value={preferences.language}
                     onChange={(e) => setPreferences({ ...preferences, language: e.target.value })}
@@ -462,7 +462,7 @@ export default function SettingsPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Timezone</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Tijdzone</label>
                   <select
                     value={preferences.timezone}
                     onChange={(e) => setPreferences({ ...preferences, timezone: e.target.value })}
@@ -475,7 +475,7 @@ export default function SettingsPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Date Format</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Datumnotatie</label>
                   <select
                     value={preferences.dateFormat}
                     onChange={(e) => setPreferences({ ...preferences, dateFormat: e.target.value })}
@@ -487,7 +487,7 @@ export default function SettingsPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Currency</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Valuta</label>
                   <select
                     value={preferences.currency}
                     onChange={(e) => setPreferences({ ...preferences, currency: e.target.value })}
@@ -499,7 +499,7 @@ export default function SettingsPage() {
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Default Shipping Method</label>
+                  <label className="block text-sm font-medium text-neutral-700 mb-2">Standaard verzendmethode</label>
                   <select
                     value={preferences.defaultShippingMethod}
                     onChange={(e) => setPreferences({ ...preferences, defaultShippingMethod: e.target.value })}
@@ -521,7 +521,7 @@ export default function SettingsPage() {
                   className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
-                  {isSaving ? 'Saving...' : 'Save Changes'}
+                  {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
                 </motion.button>
               </div>
             </div>

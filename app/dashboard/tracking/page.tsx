@@ -112,8 +112,8 @@ export default function TrackingPage() {
       <div className="space-y-6">
         {/* Page Header */}
         <div>
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Track Shipments</h1>
-          <p className="text-neutral-600">Monitor real-time status of your deliveries</p>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">Tracking</h1>
+          <p className="text-neutral-600">Volg de real-time status van je bezorgingen</p>
         </div>
 
         {/* Search Bar */}
@@ -122,7 +122,7 @@ export default function TrackingPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
             <input
               type="text"
-              placeholder="Search by tracking number, order ID, or customer..."
+              placeholder="Zoeken op trackingnummer, bestelling ID of klant..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
@@ -154,10 +154,10 @@ export default function TrackingPage() {
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-lg font-bold text-neutral-900">{shipment.id}</h3>
                         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusColor.bg} ${statusColor.text}`}>
-                          {shipment.status === 'in-transit' ? 'In Transit' : shipment.status === 'exception' ? 'Exception' : 'Delivered'}
+                          {shipment.status === 'in-transit' ? 'Onderweg' : shipment.status === 'exception' ? 'Uitzondering' : 'Afgeleverd'}
                         </span>
                       </div>
-                      <p className="text-sm text-neutral-500">Order {shipment.orderId}</p>
+                      <p className="text-sm text-neutral-500">Bestelling {shipment.orderId}</p>
                     </div>
                     <Package className={`${statusColor.text}`} size={24} />
                   </div>
@@ -172,7 +172,7 @@ export default function TrackingPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock size={16} className="text-neutral-400" />
-                      <span className="text-sm text-neutral-600">Est. delivery: {shipment.estimatedDelivery}</span>
+                      <span className="text-sm text-neutral-600">Verwachte levering: {shipment.estimatedDelivery}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Truck size={16} className="text-neutral-400" />
@@ -183,7 +183,7 @@ export default function TrackingPage() {
                   {/* Progress Bar */}
                   <div className="mt-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-medium text-neutral-600">Progress</span>
+                      <span className="text-xs font-medium text-neutral-600">Voortgang</span>
                       <span className="text-xs font-medium text-secondary-blue">{shipment.progress}%</span>
                     </div>
                     <div className="w-full h-2 bg-neutral-100 rounded-full overflow-hidden">
@@ -213,7 +213,7 @@ export default function TrackingPage() {
                     transition={{ duration: 0.3 }}
                     className="p-6 overflow-hidden"
                   >
-                    <h4 className="font-semibold text-neutral-900 mb-4">Tracking Timeline</h4>
+                    <h4 className="font-semibold text-neutral-900 mb-4">Tracking tijdlijn</h4>
                     <div className="space-y-4">
                       {shipment.timeline.map((event, eventIndex) => {
                         const Icon = event.icon;
@@ -260,10 +260,10 @@ export default function TrackingPage() {
                     {/* Action Buttons */}
                     <div className="mt-6 flex gap-3">
                       <button className="flex-1 px-4 py-2 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-medium hover:shadow-lg transition-all">
-                        View Details
+                        Details bekijken
                       </button>
                       <button className="px-4 py-2 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
-                        Contact Support
+                        Contact opnemen
                       </button>
                     </div>
                   </motion.div>
@@ -272,7 +272,7 @@ export default function TrackingPage() {
                 {/* Click to expand hint */}
                 {!isSelected && (
                   <div className="px-6 py-3 border-t border-neutral-100 text-center">
-                    <span className="text-xs text-neutral-400">Click to view timeline details</span>
+                    <span className="text-xs text-neutral-400">Klik om tijdlijn details te bekijken</span>
                   </div>
                 )}
               </motion.div>
@@ -288,8 +288,8 @@ export default function TrackingPage() {
             className="bg-white rounded-xl p-12 text-center shadow-sm border border-neutral-100"
           >
             <Package className="mx-auto text-neutral-300 mb-4" size={64} />
-            <h3 className="text-lg font-semibold text-neutral-900 mb-2">No shipments found</h3>
-            <p className="text-neutral-500">Try adjusting your search or create a new shipment</p>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-2">Geen verzendingen gevonden</h3>
+            <p className="text-neutral-500">Pas je zoekopdracht aan of maak een nieuwe verzending aan</p>
           </motion.div>
         )}
       </div>

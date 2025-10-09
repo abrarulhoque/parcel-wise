@@ -20,7 +20,7 @@ export default function CreateLabelPage() {
     houseNumber: '',
     postalCode: '',
     city: '',
-    country: 'Netherlands',
+    country: 'Nederland',
     weight: '',
     length: '',
     width: '',
@@ -40,16 +40,16 @@ export default function CreateLabelPage() {
       id: 'standard',
       name: 'PostNL Standard',
       icon: Package,
-      delivery: '2-3 business days',
+      delivery: '2-3 werkdagen',
       price: 6.95,
       features: ['Track & Trace', 'Signature'],
-      badge: 'Most Popular'
+      badge: 'Meest populair'
     },
     {
       id: 'next-day',
       name: 'PostNL Next Day',
       icon: Truck,
-      delivery: 'Next business day',
+      delivery: 'Volgende werkdag',
       price: 9.95,
       features: ['Track & Trace', 'Signature', 'Insurance']
     },
@@ -57,16 +57,16 @@ export default function CreateLabelPage() {
       id: 'same-day',
       name: 'PostNL Same Day',
       icon: Zap,
-      delivery: 'Today before 21:00',
+      delivery: 'Vandaag voor 21:00',
       price: 14.95,
       features: ['Track & Trace', 'Signature', 'Insurance', 'Priority']
     }
   ];
 
   const additionalOptions = [
-    { id: 'extraInsurance', label: 'Extra insurance (€500 coverage)', price: 2.50, icon: Shield },
-    { id: 'signatureRequired', label: 'Signature on delivery', price: 0.50, icon: FileText },
-    { id: 'ageVerification', label: 'Age verification (18+)', price: 1.00, icon: Check },
+    { id: 'extraInsurance', label: 'Extra verzekering (€500 dekking)', price: 2.50, icon: Shield },
+    { id: 'signatureRequired', label: 'Handtekening bij levering', price: 0.50, icon: FileText },
+    { id: 'ageVerification', label: 'Leeftijdsverificatie (18+)', price: 1.00, icon: Check },
   ];
 
   const calculateTotal = () => {
@@ -90,10 +90,10 @@ export default function CreateLabelPage() {
   };
 
   const steps = [
-    { number: 1, title: 'Order Details' },
-    { number: 2, title: 'Shipping Options' },
-    { number: 3, title: 'Review & Print' },
-    { number: 4, title: 'Label Created' },
+    { number: 1, title: 'Bestelgegevens' },
+    { number: 2, title: 'Verzendopties' },
+    { number: 3, title: 'Controleren & printen' },
+    { number: 4, title: 'Label aangemaakt' },
   ];
 
   return (
@@ -137,15 +137,15 @@ export default function CreateLabelPage() {
             animate={{ opacity: 1, x: 0 }}
             className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100"
           >
-            <h2 className="text-2xl font-bold text-neutral-900 mb-6">Order Details</h2>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-6">Bestelgegevens</h2>
 
             <div className="space-y-8">
               {/* Customer Information */}
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Customer Information</h3>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Klantgegevens</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Full Name *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Volledige naam *</label>
                     <input
                       type="text"
                       value={formData.fullName}
@@ -170,10 +170,10 @@ export default function CreateLabelPage() {
 
               {/* Delivery Address */}
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Delivery Address</h3>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Bezorgadres</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="md:col-span-1">
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Street Address *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Straat *</label>
                     <input
                       type="text"
                       value={formData.street}
@@ -184,7 +184,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div className="md:col-span-1">
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">House Number *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Huisnummer *</label>
                     <input
                       type="text"
                       value={formData.houseNumber}
@@ -195,7 +195,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Postal Code *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Postcode *</label>
                     <input
                       type="text"
                       value={formData.postalCode}
@@ -206,7 +206,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">City *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Plaats *</label>
                     <input
                       type="text"
                       value={formData.city}
@@ -217,16 +217,16 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Country *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Land *</label>
                     <select
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                       className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                     >
-                      <option>Netherlands</option>
-                      <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>France</option>
+                      <option>Nederland</option>
+                      <option>België</option>
+                      <option>Duitsland</option>
+                      <option>Frankrijk</option>
                     </select>
                   </div>
                 </div>
@@ -234,10 +234,10 @@ export default function CreateLabelPage() {
 
               {/* Package Details */}
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Package Details</h3>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Pakketgegevens</h3>
                 <div className="grid md:grid-cols-4 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Weight (kg) *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Gewicht (kg) *</label>
                     <input
                       type="number"
                       value={formData.weight}
@@ -249,7 +249,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Length (cm)</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Lengte (cm)</label>
                     <input
                       type="number"
                       value={formData.length}
@@ -259,7 +259,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Width (cm)</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Breedte (cm)</label>
                     <input
                       type="number"
                       value={formData.width}
@@ -269,7 +269,7 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Height (cm)</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Hoogte (cm)</label>
                     <input
                       type="number"
                       value={formData.height}
@@ -279,25 +279,25 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Package Type *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Pakkettype *</label>
                     <select
                       value={formData.packageType}
                       onChange={(e) => setFormData({ ...formData, packageType: e.target.value })}
                       className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                     >
-                      <option value="parcel">Parcel</option>
-                      <option value="letter">Letter</option>
-                      <option value="package">Package</option>
+                      <option value="parcel">Pakket</option>
+                      <option value="letter">Brief</option>
+                      <option value="package">Doos</option>
                     </select>
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Reference Number</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Referentienummer</label>
                     <input
                       type="text"
                       value={formData.reference}
                       onChange={(e) => setFormData({ ...formData, reference: e.target.value })}
                       className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
-                      placeholder="Optional"
+                      placeholder="Optioneel"
                     />
                   </div>
                 </div>
@@ -309,7 +309,7 @@ export default function CreateLabelPage() {
                 onClick={() => setCurrentStep(2)}
                 className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
-                Continue to Shipping Options
+                Doorgaan naar verzendopties
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -324,7 +324,7 @@ export default function CreateLabelPage() {
             className="space-y-6"
           >
             <div className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100">
-              <h2 className="text-2xl font-bold text-neutral-900 mb-6">Select Shipping Method</h2>
+              <h2 className="text-2xl font-bold text-neutral-900 mb-6">Selecteer verzendmethode</h2>
 
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {shippingMethods.map((method) => {
@@ -374,7 +374,7 @@ export default function CreateLabelPage() {
                 })}
               </div>
 
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Additional Options</h3>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-4">Extra opties</h3>
               <div className="space-y-3">
                 {additionalOptions.map((option) => {
                   const Icon = option.icon;
@@ -401,13 +401,13 @@ export default function CreateLabelPage() {
                 className="flex items-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue transition-all"
               >
                 <ArrowLeft size={20} />
-                Back
+                Terug
               </button>
               <button
                 onClick={() => setCurrentStep(3)}
                 className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
-                Continue to Review
+                Doorgaan naar controle
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -424,28 +424,28 @@ export default function CreateLabelPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Order Summary */}
               <div className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100">
-                <h2 className="text-xl font-bold text-neutral-900 mb-6">Order Summary</h2>
+                <h2 className="text-xl font-bold text-neutral-900 mb-6">Samenvatting</h2>
 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Customer</h3>
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Klant</h3>
                     <p className="text-neutral-900">{formData.fullName}</p>
                     {formData.email && <p className="text-sm text-neutral-600">{formData.email}</p>}
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Delivery Address</h3>
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Bezorgadres</h3>
                     <p className="text-neutral-900">{formData.street} {formData.houseNumber}</p>
                     <p className="text-neutral-600">{formData.postalCode} {formData.city}</p>
                     <p className="text-neutral-600">{formData.country}</p>
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Package Details</h3>
-                    <p className="text-neutral-600">Weight: {formData.weight} kg</p>
-                    {formData.length && <p className="text-neutral-600">Dimensions: {formData.length} × {formData.width} × {formData.height} cm</p>}
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Pakketgegevens</h3>
+                    <p className="text-neutral-600">Gewicht: {formData.weight} kg</p>
+                    {formData.length && <p className="text-neutral-600">Afmetingen: {formData.length} × {formData.width} × {formData.height} cm</p>}
                     <p className="text-neutral-600">Type: {formData.packageType}</p>
-                    {formData.reference && <p className="text-neutral-600">Reference: {formData.reference}</p>}
+                    {formData.reference && <p className="text-neutral-600">Referentie: {formData.reference}</p>}
                   </div>
                 </div>
               </div>
@@ -453,7 +453,7 @@ export default function CreateLabelPage() {
               {/* Cost Breakdown & Label Preview */}
               <div className="space-y-6">
                 <div className="bg-white rounded-xl p-8 shadow-sm border border-neutral-100">
-                  <h2 className="text-xl font-bold text-neutral-900 mb-6">Cost Breakdown</h2>
+  <h2 className="text-xl font-bold text-neutral-900 mb-6">Kostenspecificatie</h2>
 
                   {(() => {
                     const { subtotal, vat, total } = calculateTotal();
@@ -467,19 +467,19 @@ export default function CreateLabelPage() {
                         </div>
                         {formData.extraInsurance && (
                           <div className="flex justify-between text-neutral-600">
-                            <span>Extra Insurance</span>
+                            <span>Extra verzekering</span>
                             <span>€2.50</span>
                           </div>
                         )}
                         {formData.signatureRequired && (
                           <div className="flex justify-between text-neutral-600">
-                            <span>Signature Required</span>
+                            <span>Handtekening vereist</span>
                             <span>€0.50</span>
                           </div>
                         )}
                         {formData.ageVerification && (
                           <div className="flex justify-between text-neutral-600">
-                            <span>Age Verification</span>
+                            <span>Leeftijdsverificatie</span>
                             <span>€1.00</span>
                           </div>
                         )}
@@ -492,7 +492,7 @@ export default function CreateLabelPage() {
                           <span>€{vat.toFixed(2)}</span>
                         </div>
                         <div className="border-t-2 border-neutral-900 pt-3 flex justify-between text-xl font-bold text-neutral-900">
-                          <span>Total</span>
+                          <span>Totaal</span>
                           <span>€{total.toFixed(2)}</span>
                         </div>
                       </div>
@@ -506,8 +506,8 @@ export default function CreateLabelPage() {
                       <Package className="text-white" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-neutral-900">Label Preview</h3>
-                      <p className="text-sm text-neutral-600">PostNL Shipping Label</p>
+                      <h3 className="font-semibold text-neutral-900">Labelvoorbeeld</h3>
+                      <p className="text-sm text-neutral-600">PostNL verzendlabel</p>
                     </div>
                   </div>
                   <div className="bg-white rounded-lg p-6 text-center">
@@ -529,19 +529,19 @@ export default function CreateLabelPage() {
                 className="flex items-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue transition-all"
               >
                 <ArrowLeft size={20} />
-                Back to Edit
+                Terug naar bewerken
               </button>
               <div className="flex gap-4">
                 <button className="flex items-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-semibold hover:border-secondary-blue transition-all">
                   <FileText size={20} />
-                  Save as Draft
+                  Opslaan als concept
                 </button>
                 <button
                   onClick={handleSubmit}
                   className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   <Printer size={20} />
-                  Create & Print Label
+                  Label aanmaken & printen
                 </button>
               </div>
             </div>
@@ -565,8 +565,8 @@ export default function CreateLabelPage() {
               >
                 <CheckCircle className="text-white" size={48} />
               </motion.div>
-              <h2 className="text-2xl font-bold text-neutral-900 mb-2">Label Created Successfully!</h2>
-              <p className="text-neutral-600">Your shipping label has been generated and is ready to use.</p>
+              <h2 className="text-2xl font-bold text-neutral-900 mb-2">Label succesvol aangemaakt!</h2>
+              <p className="text-neutral-600">Uw verzendlabel is gegenereerd en klaar voor gebruik.</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">
@@ -578,14 +578,14 @@ export default function CreateLabelPage() {
                       <Package size={24} />
                       <span className="font-bold text-lg">PostNL</span>
                     </div>
-                    <span className="text-sm opacity-90">Shipping Label</span>
+                    <span className="text-sm opacity-90">Verzendlabel</span>
                   </div>
                 </div>
 
                 <div className="p-6 space-y-6">
                   {/* Tracking Number */}
                   <div className="text-center">
-                    <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Tracking Number</div>
+                    <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Trackingnummer</div>
                     <div className="font-mono text-xl font-bold text-neutral-900 bg-neutral-50 py-3 px-4 rounded-lg">
                       {trackingNumber}
                     </div>
@@ -615,7 +615,7 @@ export default function CreateLabelPage() {
                   {/* Sender & Recipient */}
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="font-semibold text-neutral-900 mb-2">FROM:</div>
+                      <div className="font-semibold text-neutral-900 mb-2">VAN:</div>
                       <div className="text-neutral-600 space-y-1">
                         <div>Company Ltd.</div>
                         <div>Damstraat 123</div>
@@ -624,7 +624,7 @@ export default function CreateLabelPage() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-semibold text-neutral-900 mb-2">TO:</div>
+                      <div className="font-semibold text-neutral-900 mb-2">NAAR:</div>
                       <div className="text-neutral-600 space-y-1">
                         <div>{formData.fullName || 'Customer Name'}</div>
                         <div>{formData.street} {formData.houseNumber}</div>
@@ -643,12 +643,12 @@ export default function CreateLabelPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm mt-2">
-                      <span className="text-neutral-600">Weight:</span>
+                      <span className="text-neutral-600">Gewicht:</span>
                       <span className="font-semibold text-neutral-900">{formData.weight} kg</span>
                     </div>
                     {formData.reference && (
                       <div className="flex items-center justify-between text-sm mt-2">
-                        <span className="text-neutral-600">Reference:</span>
+                        <span className="text-neutral-600">Referentie:</span>
                         <span className="font-semibold text-neutral-900">{formData.reference}</span>
                       </div>
                     )}
@@ -657,21 +657,21 @@ export default function CreateLabelPage() {
                   {/* Additional Services */}
                   {(formData.extraInsurance || formData.signatureRequired || formData.ageVerification) && (
                     <div className="border-t pt-4">
-                      <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Additional Services</div>
+                      <div className="text-xs font-semibold text-neutral-500 uppercase mb-2">Extra diensten</div>
                       <div className="flex flex-wrap gap-2">
                         {formData.extraInsurance && (
                           <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
-                            Extra Insurance
+                            Extra verzekering
                           </span>
                         )}
                         {formData.signatureRequired && (
                           <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
-                            Signature Required
+                            Handtekening vereist
                           </span>
                         )}
                         {formData.ageVerification && (
                           <span className="px-2 py-1 bg-secondary-blue/10 text-secondary-blue text-xs font-medium rounded">
-                            Age Verification
+                            Leeftijdsverificatie
                           </span>
                         )}
                       </div>
@@ -684,7 +684,7 @@ export default function CreateLabelPage() {
               <div className="space-y-6">
                 {/* Cost Summary */}
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100">
-                  <h3 className="font-semibold text-neutral-900 mb-4">Order Summary</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-4">Samenvatting</h3>
                   {(() => {
                     const { subtotal, vat, total } = calculateTotal();
                     const selectedMethod = shippingMethods.find(m => m.id === formData.shippingMethod);
@@ -697,19 +697,19 @@ export default function CreateLabelPage() {
                         </div>
                         {formData.extraInsurance && (
                           <div className="flex justify-between text-sm text-neutral-600">
-                            <span>Extra Insurance</span>
+                            <span>Extra verzekering</span>
                             <span>€2.50</span>
                           </div>
                         )}
                         {formData.signatureRequired && (
                           <div className="flex justify-between text-sm text-neutral-600">
-                            <span>Signature Required</span>
+                            <span>Handtekening vereist</span>
                             <span>€0.50</span>
                           </div>
                         )}
                         {formData.ageVerification && (
                           <div className="flex justify-between text-sm text-neutral-600">
-                            <span>Age Verification</span>
+                            <span>Leeftijdsverificatie</span>
                             <span>€1.00</span>
                           </div>
                         )}
@@ -722,7 +722,7 @@ export default function CreateLabelPage() {
                           <span>€{vat.toFixed(2)}</span>
                         </div>
                         <div className="border-t-2 border-neutral-900 pt-3 flex justify-between text-lg font-bold text-neutral-900">
-                          <span>Total Charged</span>
+                          <span>Totale kosten</span>
                           <span>€{total.toFixed(2)}</span>
                         </div>
                       </div>
@@ -732,7 +732,7 @@ export default function CreateLabelPage() {
 
                 {/* Action Buttons */}
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100 space-y-3">
-                  <h3 className="font-semibold text-neutral-900 mb-4">What's next?</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-4">Wat nu?</h3>
 
                   <motion.button
                     whileHover={{ scale: 1.02 }}
@@ -741,7 +741,7 @@ export default function CreateLabelPage() {
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                   >
                     <Printer size={20} />
-                    Print Label
+                    Label printen
                   </motion.button>
 
                   <motion.button
@@ -750,14 +750,14 @@ export default function CreateLabelPage() {
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-secondary-blue text-secondary-blue rounded-lg font-semibold hover:bg-secondary-blue hover:text-white transition-all"
                   >
                     <Download size={20} />
-                    Download PDF
+                    PDF downloaden
                   </motion.button>
 
                   <div className="pt-3 border-t border-neutral-200 space-y-2">
                     <Link href="/dashboard/tracking">
                       <button className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
                         <Package size={18} />
-                        Track This Shipment
+                        Volg deze zending
                       </button>
                     </Link>
 
@@ -772,7 +772,7 @@ export default function CreateLabelPage() {
                           houseNumber: '',
                           postalCode: '',
                           city: '',
-                          country: 'Netherlands',
+                          country: 'Nederland',
                           weight: '',
                           length: '',
                           width: '',
@@ -788,13 +788,13 @@ export default function CreateLabelPage() {
                       className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-neutral-300 transition-all"
                     >
                       <FileText size={18} />
-                      Create Another Label
+                      Nog een label aanmaken
                     </button>
 
                     <Link href="/dashboard">
                       <button className="w-full flex items-center justify-center gap-2 px-6 py-3 text-neutral-600 rounded-lg font-medium hover:bg-neutral-50 transition-all">
                         <Home size={18} />
-                        Back to Dashboard
+                        Terug naar dashboard
                       </button>
                     </Link>
                   </div>
@@ -803,7 +803,7 @@ export default function CreateLabelPage() {
                 {/* Info Box */}
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <p className="text-sm text-blue-900">
-                    <strong>Next steps:</strong> Print and attach the label to your package. Drop it off at any PostNL location or schedule a pickup.
+                    <strong>Volgende stappen:</strong> Print en bevestig het label op uw pakket. Breng het naar een PostNL locatie of plan een ophaalmoment in.
                   </p>
                 </div>
               </div>

@@ -28,11 +28,11 @@ export default function OrdersPage() {
 
   const getStatusBadge = (status: string) => {
     const badges = {
-      'pending': { bg: 'bg-warning/10', text: 'text-warning', label: 'Pending' },
-      'label-created': { bg: 'bg-secondary-blue/10', text: 'text-secondary-blue', label: 'Label Created' },
-      'in-transit': { bg: 'bg-primary-blue/10', text: 'text-primary-blue', label: 'In Transit' },
-      'delivered': { bg: 'bg-success/10', text: 'text-success', label: 'Delivered' },
-      'exception': { bg: 'bg-error/10', text: 'text-error', label: 'Exception' },
+      'pending': { bg: 'bg-warning/10', text: 'text-warning', label: 'In behandeling' },
+      'label-created': { bg: 'bg-secondary-blue/10', text: 'text-secondary-blue', label: 'Label aangemaakt' },
+      'in-transit': { bg: 'bg-primary-blue/10', text: 'text-primary-blue', label: 'Onderweg' },
+      'delivered': { bg: 'bg-success/10', text: 'text-success', label: 'Afgeleverd' },
+      'exception': { bg: 'bg-error/10', text: 'text-error', label: 'Uitzondering' },
     };
     return badges[status as keyof typeof badges] || badges.pending;
   };
@@ -76,8 +76,8 @@ export default function OrdersPage() {
         {/* Page Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-neutral-900 mb-2">Orders</h1>
-            <p className="text-neutral-600">Manage all your shipping orders</p>
+            <h1 className="text-3xl font-bold text-neutral-900 mb-2">Bestellingen</h1>
+            <p className="text-neutral-600">Beheer al je verzendbestellingen</p>
           </div>
           <Link href="/dashboard/create-label">
             <motion.button
@@ -86,7 +86,7 @@ export default function OrdersPage() {
               className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
             >
               <Plus size={20} />
-              Create New Order
+              Nieuwe bestelling aanmaken
             </motion.button>
           </Link>
         </div>
@@ -94,12 +94,12 @@ export default function OrdersPage() {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
-            { label: 'All Orders', count: statusCounts.all, status: 'all' },
-            { label: 'Pending', count: statusCounts.pending, status: 'pending' },
-            { label: 'Label Created', count: statusCounts['label-created'], status: 'label-created' },
-            { label: 'In Transit', count: statusCounts['in-transit'], status: 'in-transit' },
-            { label: 'Delivered', count: statusCounts.delivered, status: 'delivered' },
-            { label: 'Exceptions', count: statusCounts.exception, status: 'exception' },
+            { label: 'Alle bestellingen', count: statusCounts.all, status: 'all' },
+            { label: 'In behandeling', count: statusCounts.pending, status: 'pending' },
+            { label: 'Label aangemaakt', count: statusCounts['label-created'], status: 'label-created' },
+            { label: 'Onderweg', count: statusCounts['in-transit'], status: 'in-transit' },
+            { label: 'Afgeleverd', count: statusCounts.delivered, status: 'delivered' },
+            { label: 'Uitzonderingen', count: statusCounts.exception, status: 'exception' },
           ].map((stat) => (
             <motion.button
               key={stat.status}
@@ -125,7 +125,7 @@ export default function OrdersPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
               <input
                 type="text"
-                placeholder="Search by order ID, customer, or destination..."
+                placeholder="Zoeken op bestelling ID, klant of bestemming..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
@@ -137,15 +137,15 @@ export default function OrdersPage() {
               <div className="flex gap-2">
                 <button className="flex items-center gap-2 px-4 py-2.5 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
                   <Printer size={18} />
-                  Print ({selectedOrders.length})
+                  Printen ({selectedOrders.length})
                 </button>
                 <button className="flex items-center gap-2 px-4 py-2.5 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
                   <Download size={18} />
-                  Export
+                  Exporteren
                 </button>
                 <button className="flex items-center gap-2 px-4 py-2.5 border-2 border-error/20 text-error rounded-lg font-medium hover:bg-error/10 transition-all">
                   <Trash2 size={18} />
-                  Delete
+                  Verwijderen
                 </button>
               </div>
             )}
@@ -170,14 +170,14 @@ export default function OrdersPage() {
                       className="w-4 h-4 text-secondary-blue rounded border-neutral-300 focus:ring-secondary-blue"
                     />
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Order ID</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Customer</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Destination</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Date & Time</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Method</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Bestelling ID</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Klant</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Bestemming</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Datum & Tijd</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Methode</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Status</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Price</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Actions</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Prijs</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-neutral-600 uppercase">Acties</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100">
@@ -185,7 +185,7 @@ export default function OrdersPage() {
                   <tr>
                     <td colSpan={9} className="px-6 py-12 text-center">
                       <Package className="mx-auto text-neutral-300 mb-3" size={48} />
-                      <p className="text-neutral-500">No orders found</p>
+                      <p className="text-neutral-500">Geen bestellingen gevonden</p>
                     </td>
                   </tr>
                 ) : (
@@ -231,7 +231,7 @@ export default function OrdersPage() {
                         <td className="px-6 py-4 text-sm font-medium text-neutral-900">{order.price}</td>
                         <td className="px-6 py-4">
                           <button className="text-secondary-blue hover:text-primary-blue font-medium text-sm">
-                            View Details
+                            Details bekijken
                           </button>
                         </td>
                       </motion.tr>
@@ -246,11 +246,11 @@ export default function OrdersPage() {
           {filteredOrders.length > 0 && (
             <div className="px-6 py-4 border-t border-neutral-100 flex items-center justify-between">
               <div className="text-sm text-neutral-500">
-                Showing {filteredOrders.length} of {allOrders.length} orders
+                {filteredOrders.length} van {allOrders.length} bestellingen weergegeven
               </div>
               <div className="flex gap-2">
                 <button className="px-4 py-2 border border-neutral-200 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                  Previous
+                  Vorige
                 </button>
                 <button className="px-4 py-2 bg-secondary-blue text-white rounded-lg text-sm font-medium">
                   1
@@ -259,7 +259,7 @@ export default function OrdersPage() {
                   2
                 </button>
                 <button className="px-4 py-2 border border-neutral-200 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors">
-                  Next
+                  Volgende
                 </button>
               </div>
             </div>
