@@ -72,7 +72,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <motion.button
-                className="group bg-secondary-blue text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
+                className="group bg-gradient-to-r from-primary-blue to-accent-blue text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -81,7 +81,7 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
-                className="group bg-white text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 border-2 border-accent-blue hover:bg-primary-blue hover:text-white transition-all duration-300"
+                className="group bg-white text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 border-2 border-primary-blue hover:bg-primary-blue hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -162,7 +162,7 @@ export default function HeroSection() {
 
               {/* Decorative elements */}
               <motion.div
-                className="absolute w-16 h-16 bg-accent-blue rounded-lg"
+                className="absolute w-16 h-16 bg-primary-blue rounded-lg"
                 style={{ right: '10%', top: '20%' }}
                 animate={{
                   rotate: [0, 360],

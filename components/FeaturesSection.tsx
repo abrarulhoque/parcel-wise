@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: TrendingDown,
-    title: 'Kosten optimalisatie',
-    description: 'Toegang tot gereduceerde PostNL tarieven en slimme verzendadviezen. Bespaar tot 40% op binnenlandse en internationale verzendingen.',
+    title: 'Kostenoptimalisatie',
+    description: 'Profiteer van gereduceerde PostNL-tarieven en slimme verzendadviezen. Verstuur sneller, slimmer en efficiënter – zowel nationaal als internationaal.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
