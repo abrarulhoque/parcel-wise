@@ -12,7 +12,7 @@ export default function DashboardPage() {
       label: 'Totaal verzendingen',
       value: '1,247',
       change: '+12.5% ten opzichte van vorige maand',
-      color: 'from-secondary-blue to-primary-blue'
+      color: 'from-primary-blue to-accent-blue'
     },
     {
       icon: Clock,
@@ -26,14 +26,14 @@ export default function DashboardPage() {
       label: 'Onderweg',
       value: '342',
       change: '98% op tijd bezorgd',
-      color: 'from-accent-blue to-secondary-blue'
+      color: 'from-primary-blue to-accent-blue'
     },
     {
       icon: DollarSign,
       label: 'Kostenbesparingen',
       value: '€3,459',
       change: '38% besparing deze maand',
-      color: 'from-secondary-blue to-blue-600'
+      color: 'from-primary-blue to-accent-blue'
     },
   ];
 

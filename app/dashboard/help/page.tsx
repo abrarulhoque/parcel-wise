@@ -10,10 +10,10 @@ export default function HelpPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const quickLinks = [
-    { title: 'Aan de slag handleiding', icon: BookOpen, description: 'Leer de basis van ParcelWise', color: 'from-secondary-blue to-primary-blue' },
+    { title: 'Aan de slag handleiding', icon: BookOpen, description: 'Leer de basis van ParcelWise', color: 'from-primary-blue to-accent-blue' },
     { title: 'Video tutorials', icon: Video, description: 'Bekijk stapsgewijze video handleidingen', color: 'from-primary-blue to-accent-blue' },
-    { title: 'API documentatie', icon: FileText, description: 'Integreer met onze API', color: 'from-accent-blue to-secondary-blue' },
-    { title: 'Contact opnemen', icon: MessageCircle, description: 'Krijg hulp van ons team', color: 'from-secondary-blue to-blue-600' },
+    { title: 'API documentatie', icon: FileText, description: 'Integreer met onze API', color: 'from-primary-blue to-accent-blue' },
+    { title: 'Contact opnemen', icon: MessageCircle, description: 'Krijg hulp van ons team', color: 'from-primary-blue to-accent-blue' },
   ];
 
   const faqs = [

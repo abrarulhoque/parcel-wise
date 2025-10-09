@@ -15,7 +15,7 @@ export default function AnalyticsPage() {
       change: '+18.2%',
       trend: 'up',
       icon: DollarSign,
-      color: 'from-secondary-blue to-primary-blue'
+      color: 'from-primary-blue to-accent-blue'
     },
     {
       label: 'Totaal verzendingen',
@@ -31,7 +31,7 @@ export default function AnalyticsPage() {
       change: '-8.4%',
       trend: 'down',
       icon: Truck,
-      color: 'from-accent-blue to-secondary-blue'
+      color: 'from-primary-blue to-accent-blue'
     },
     {
       label: 'Succespercentage',
@@ -39,7 +39,7 @@ export default function AnalyticsPage() {
       change: '+2.1%',
       trend: 'up',
       icon: TrendingUp,
-      color: 'from-secondary-blue to-blue-600'
+      color: 'from-primary-blue to-accent-blue'
     },
   ];
 
