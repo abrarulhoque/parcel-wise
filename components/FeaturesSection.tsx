@@ -57,7 +57,7 @@ export default function FeaturesSection() {
             Alles wat u nodig heeft om slimmer te verzenden
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
-            Krachtige functies ontworpen om uw verzendactiviteiten te stroomlijnen en uw klanten te plezieren
+            Ontworpen om uw verzendingen sneller, slimmer en klantgerichter te maken.
           </p>
         </motion.div>
 

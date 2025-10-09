@@ -9,7 +9,7 @@ const steps = [
     icon: UserPlus,
     title: "Maak account aan",
     description:
-      "Meld u gratis aan en krijg direct toegang tot uw dashboard. Geen creditcard nodig om te beginnen.",
+      "Meld u gratis aan en krijg direct toegang tot alle functies",
   },
   {
     number: 2,
@@ -144,13 +144,14 @@ export default function HowItWorksSection() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center mt-16"
         >
-          <motion.button
-            className="bg-[#325C84] text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+          <motion.a
+            href="/register"
+            className="inline-block bg-[#325C84] text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Begin nu
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

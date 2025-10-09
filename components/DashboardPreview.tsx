@@ -49,7 +49,7 @@ export default function DashboardPreview() {
             Alles wat u nodig heeft in één dashboard
           </h2>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-            Beheer bestellingen, maak labels, volg zendingen en analyseer prestaties vanuit één intuïtieve interface.
+            Alles voor uw verzendingen in één dashboard. Efficiënt, overzichtelijk en tijdbesparend.
           </p>
         </motion.div>
 
