@@ -3,6 +3,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 
+/**
+ * HeroSection Component
+ * Displays the main hero section with animated elements and call-to-action buttons
+ */
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-blue/5 via-neutral-50 to-secondary-blue/5 pt-20">
