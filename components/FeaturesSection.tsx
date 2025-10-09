@@ -6,7 +6,7 @@ import { Printer, MapPin, TrendingDown, TrendingUp, Settings, FileText } from 'l
 const features = [
   {
     icon: Printer,
-    title: 'Direct label aanmaken',
+    title: 'Direct labels aanmaken',
     description: 'Maak PostNL verzendlabels in seconden. Druk tot 500 labels tegelijk af met geautomatiseerde adresvalidatie.',
     color: '[#325C84]'
   },

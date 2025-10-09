@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
             Begin met verzenden via ParcelWise in slechts vier eenvoudige
-            stappen
+            stappen:
           </p>
         </motion.div>
 
