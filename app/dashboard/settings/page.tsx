@@ -102,7 +102,7 @@ export default function SettingsPage() {
             <div className="space-y-6">
               {/* Avatar */}
               <div className="flex items-center gap-6">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue flex items-center justify-center text-white text-3xl font-bold">
+                <div className="w-24 h-24 rounded-full bg-[#325C84] flex items-center justify-center text-white text-3xl font-bold">
                   JD
                 </div>
                 <div>
@@ -174,7 +174,7 @@ export default function SettingsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={isSaving}
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
                   {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
@@ -269,7 +269,7 @@ export default function SettingsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={isSaving}
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
                   {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
@@ -358,7 +358,7 @@ export default function SettingsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={isSaving}
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
                   {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}
@@ -400,7 +400,7 @@ export default function SettingsPage() {
                     className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                   />
                 </div>
-                <button className="px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                <button className="px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all">
                   Wachtwoord bijwerken
                 </button>
               </div>
@@ -518,7 +518,7 @@ export default function SettingsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={isSaving}
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
+                  className="flex items-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50"
                 >
                   <Save size={18} />
                   {isSaving ? 'Opslaan...' : 'Wijzigingen opslaan'}

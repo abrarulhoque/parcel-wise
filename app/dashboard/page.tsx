@@ -12,28 +12,28 @@ export default function DashboardPage() {
       label: 'Totaal verzendingen',
       value: '1,247',
       change: '+12.5% ten opzichte van vorige maand',
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       icon: Clock,
       label: 'Actieve bestellingen',
       value: '89',
       change: 'In afwachting van label aanmaak',
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       icon: Truck,
       label: 'Onderweg',
       value: '342',
       change: '98% op tijd bezorgd',
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       icon: DollarSign,
       label: 'Kostenbesparingen',
       value: '€3,459',
       change: '38% besparing deze maand',
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
   ];
 
@@ -93,7 +93,7 @@ export default function DashboardPage() {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-100"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 rounded-lg bg-${stat.color} flex items-center justify-center mb-4`}>
                   <Icon className="text-white" size={24} />
                 </div>
                 <div className="text-3xl font-bold text-neutral-900 mb-1">{stat.value}</div>
@@ -114,7 +114,7 @@ export default function DashboardPage() {
           <h2 className="text-lg font-semibold text-neutral-900 mb-4">Snelle acties</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Link href="/dashboard/create-label">
-              <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+              <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all">
                 <Plus size={20} />
                 Label aanmaken
               </button>
@@ -243,7 +243,7 @@ export default function DashboardPage() {
                     initial={{ height: 0 }}
                     animate={{ height: `${(data.shipments / 60) * 100}%` }}
                     transition={{ delay: 0.7 + index * 0.02, duration: 0.5 }}
-                    className="w-full bg-gradient-to-t from-secondary-blue to-primary-blue rounded-t group-hover:from-primary-blue group-hover:to-secondary-blue transition-all cursor-pointer"
+                    className="w-full bg-[#325C84] rounded-t hover:opacity-90 transition-all cursor-pointer"
                     style={{ minHeight: '4px' }}
                   >
                     <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">

@@ -44,7 +44,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#325C84] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">P</span>
           </div>
           <span className="text-xl font-bold text-neutral-900">ParcelWise</span>
@@ -67,7 +67,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           {/* Logo */}
           <div className="p-6 border-b border-neutral-200">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#325C84] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">P</span>
               </div>
               <span className="text-xl font-bold text-neutral-900">ParcelWise</span>
@@ -77,7 +77,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           {/* Profile Section */}
           <div className="p-6 border-b border-neutral-200">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue flex items-center justify-center text-white font-semibold">
+              <div className="w-12 h-12 rounded-full bg-[#325C84] flex items-center justify-center text-white font-semibold">
                 JD
               </div>
               <div className="flex-1 min-w-0">
@@ -106,7 +106,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                     onClick={() => setIsSidebarOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                       isActive
-                        ? 'bg-gradient-to-r from-secondary-blue to-primary-blue text-white shadow-md'
+                        ? 'bg-[#325C84] text-white shadow-md'
                         : 'text-neutral-700 hover:bg-neutral-100'
                     }`}
                   >
@@ -164,7 +164,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full" />
                 </button>
                 <div className="hidden md:flex items-center gap-3 pl-4 border-l border-neutral-200">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue flex items-center justify-center text-white text-sm font-semibold">
+                  <div className="w-9 h-9 rounded-full bg-[#325C84] flex items-center justify-center text-white text-sm font-semibold">
                     JD
                   </div>
                   <div>

@@ -88,7 +88,7 @@ export default function BillingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="lg:col-span-2 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-xl p-8 text-white shadow-lg"
+            className="lg:col-span-2 bg-[#325C84] rounded-xl p-8 text-white shadow-lg"
           >
             <div className="flex items-start justify-between mb-6">
               <div>
@@ -385,7 +385,7 @@ export default function BillingPage() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#325C84] rounded-lg flex items-center justify-center">
                       <CreditCard className="text-white" size={24} />
                     </div>
                     <div>

@@ -83,7 +83,7 @@ export default function OrdersPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
             >
               <Plus size={20} />
               Nieuwe bestelling aanmaken

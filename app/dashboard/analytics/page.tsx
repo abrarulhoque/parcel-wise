@@ -15,7 +15,7 @@ export default function AnalyticsPage() {
       change: '+18.2%',
       trend: 'up',
       icon: DollarSign,
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       label: 'Totaal verzendingen',
@@ -23,7 +23,7 @@ export default function AnalyticsPage() {
       change: '+12.5%',
       trend: 'up',
       icon: Package,
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       label: 'Gemiddelde levertijd',
@@ -31,7 +31,7 @@ export default function AnalyticsPage() {
       change: '-8.4%',
       trend: 'down',
       icon: Truck,
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
     {
       label: 'Succespercentage',
@@ -39,7 +39,7 @@ export default function AnalyticsPage() {
       change: '+2.1%',
       trend: 'up',
       icon: TrendingUp,
-      color: 'from-primary-blue to-accent-blue'
+      color: '[#325C84]'
     },
   ];
 
@@ -106,7 +106,7 @@ export default function AnalyticsPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-medium hover:shadow-lg transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-[#325C84] text-white rounded-lg font-medium hover:shadow-lg transition-all"
             >
               <Download size={18} />
               Rapport exporteren
@@ -126,7 +126,7 @@ export default function AnalyticsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${kpi.color} flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 rounded-lg bg-${kpi.color} flex items-center justify-center mb-4`}>
                   <Icon className="text-white" size={24} />
                 </div>
                 <div className="text-3xl font-bold text-neutral-900 mb-1">{kpi.value}</div>
@@ -166,7 +166,7 @@ export default function AnalyticsPage() {
                       initial={{ height: 0 }}
                       animate={{ height: `${(data.shipments / maxShipments) * 100}%` }}
                       transition={{ delay: 0.5 + index * 0.05, duration: 0.5 }}
-                      className="w-full bg-gradient-to-t from-secondary-blue to-primary-blue rounded-t group-hover:from-primary-blue group-hover:to-secondary-blue transition-all cursor-pointer"
+                      className="w-full bg-[#325C84] rounded-t hover:opacity-90 transition-all cursor-pointer"
                       style={{ minHeight: '8px' }}
                     >
                       <div className="opacity-0 group-hover:opacity-100 absolute -top-12 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">
@@ -202,7 +202,7 @@ export default function AnalyticsPage() {
                       initial={{ height: 0 }}
                       animate={{ height: `${(data.revenue / maxRevenue) * 100}%` }}
                       transition={{ delay: 0.6 + index * 0.05, duration: 0.5 }}
-                      className="w-full bg-gradient-to-t from-accent-blue to-secondary-blue rounded-t group-hover:from-secondary-blue group-hover:to-accent-blue transition-all cursor-pointer"
+                      className="w-full bg-[#325C84] rounded-t hover:opacity-90 transition-all cursor-pointer"
                       style={{ minHeight: '8px' }}
                     >
                       <div className="opacity-0 group-hover:opacity-100 absolute -top-12 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap transition-opacity">
@@ -255,7 +255,7 @@ export default function AnalyticsPage() {
                         initial={{ width: 0 }}
                         animate={{ width: `${dest.percentage}%` }}
                         transition={{ delay: 0.8 + index * 0.05, duration: 0.5 }}
-                        className="h-full bg-gradient-to-r from-secondary-blue to-primary-blue"
+                        className="h-full bg-[#325C84]"
                       />
                     </div>
                   </div>

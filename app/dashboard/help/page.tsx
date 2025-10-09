@@ -10,10 +10,10 @@ export default function HelpPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const quickLinks = [
-    { title: 'Aan de slag handleiding', icon: BookOpen, description: 'Leer de basis van ParcelWise', color: 'from-primary-blue to-accent-blue' },
-    { title: 'Video tutorials', icon: Video, description: 'Bekijk stapsgewijze video handleidingen', color: 'from-primary-blue to-accent-blue' },
-    { title: 'API documentatie', icon: FileText, description: 'Integreer met onze API', color: 'from-primary-blue to-accent-blue' },
-    { title: 'Contact opnemen', icon: MessageCircle, description: 'Krijg hulp van ons team', color: 'from-primary-blue to-accent-blue' },
+    { title: 'Aan de slag handleiding', icon: BookOpen, description: 'Leer de basis van ParcelWise', color: '[#325C84]' },
+    { title: 'Video tutorials', icon: Video, description: 'Bekijk stapsgewijze video handleidingen', color: '[#325C84]' },
+    { title: 'API documentatie', icon: FileText, description: 'Integreer met onze API', color: '[#325C84]' },
+    { title: 'Contact opnemen', icon: MessageCircle, description: 'Krijg hulp van ons team', color: '[#325C84]' },
   ];
 
   const faqs = [
@@ -168,7 +168,7 @@ export default function HelpPage() {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-all text-left"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${link.color} flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 rounded-lg bg-${link.color} flex items-center justify-center mb-4`}>
                   <Icon className="text-white" size={24} />
                 </div>
                 <h3 className="font-semibold text-neutral-900 mb-2">{link.title}</h3>
@@ -253,7 +253,7 @@ export default function HelpPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-gradient-to-br from-secondary-blue to-primary-blue rounded-xl p-8 text-white"
+          className="bg-[#325C84] rounded-xl p-8 text-white"
         >
           <h2 className="text-2xl font-bold mb-2">Nog steeds hulp nodig?</h2>
           <p className="text-white/90 mb-8">Ons ondersteuningsteam staat klaar om je te helpen</p>

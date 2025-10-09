@@ -109,7 +109,7 @@ export default function CreateLabelPage() {
                     currentStep > step.number
                       ? 'bg-success text-white'
                       : currentStep === step.number
-                      ? 'bg-gradient-to-r from-secondary-blue to-primary-blue text-white'
+                      ? 'bg-[#325C84] text-white'
                       : 'bg-neutral-200 text-neutral-600'
                   }`}>
                     {currentStep > step.number ? <Check size={20} /> : step.number}
@@ -307,7 +307,7 @@ export default function CreateLabelPage() {
             <div className="flex justify-end mt-8">
               <button
                 onClick={() => setCurrentStep(2)}
-                className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="flex items-center gap-2 px-8 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Doorgaan naar verzendopties
                 <ArrowRight size={20} />
@@ -342,14 +342,14 @@ export default function CreateLabelPage() {
                       }`}
                     >
                       {method.badge && (
-                        <span className="absolute -top-3 left-4 px-3 py-1 bg-gradient-to-r from-secondary-blue to-primary-blue text-white text-xs font-semibold rounded-full">
+                        <span className="absolute -top-3 left-4 px-3 py-1 bg-[#325C84] text-white text-xs font-semibold rounded-full">
                           {method.badge}
                         </span>
                       )}
 
                       <div className="flex items-center gap-3 mb-4">
                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                          isSelected ? 'bg-gradient-to-br from-secondary-blue to-primary-blue' : 'bg-neutral-100'
+                          isSelected ? 'bg-[#325C84]' : 'bg-neutral-100'
                         }`}>
                           <Icon className={isSelected ? 'text-white' : 'text-neutral-600'} size={24} />
                         </div>
@@ -405,7 +405,7 @@ export default function CreateLabelPage() {
               </button>
               <button
                 onClick={() => setCurrentStep(3)}
-                className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="flex items-center gap-2 px-8 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Doorgaan naar controle
                 <ArrowRight size={20} />
@@ -502,7 +502,7 @@ export default function CreateLabelPage() {
 
                 <div className="bg-gradient-to-br from-secondary-blue/10 to-primary-blue/10 rounded-xl p-8 border border-secondary-blue/20">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#325C84] rounded-lg flex items-center justify-center">
                       <Package className="text-white" size={24} />
                     </div>
                     <div>
@@ -538,7 +538,7 @@ export default function CreateLabelPage() {
                 </button>
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="flex items-center gap-2 px-8 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   <Printer size={20} />
                   Label aanmaken & printen
@@ -572,7 +572,7 @@ export default function CreateLabelPage() {
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Shipping Label */}
               <div className="bg-white rounded-xl shadow-lg border-2 border-neutral-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-secondary-blue to-primary-blue p-4 text-white">
+                <div className="bg-[#325C84] p-4 text-white">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Package size={24} />
@@ -738,7 +738,7 @@ export default function CreateLabelPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => window.print()}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#325C84] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                   >
                     <Printer size={20} />
                     Label printen

@@ -191,7 +191,7 @@ export default function TrackingPage() {
                         initial={{ width: 0 }}
                         animate={{ width: `${shipment.progress}%` }}
                         transition={{ duration: 1, delay: index * 0.1 }}
-                        className={`h-full ${shipment.status === 'exception' ? 'bg-error' : 'bg-gradient-to-r from-secondary-blue to-primary-blue'}`}
+                        className={`h-full ${shipment.status === 'exception' ? 'bg-error' : 'bg-[#325C84]'}`}
                       />
                     </div>
                   </div>
@@ -259,7 +259,7 @@ export default function TrackingPage() {
 
                     {/* Action Buttons */}
                     <div className="mt-6 flex gap-3">
-                      <button className="flex-1 px-4 py-2 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-medium hover:shadow-lg transition-all">
+                      <button className="flex-1 px-4 py-2 bg-[#325C84] text-white rounded-lg font-medium hover:shadow-lg transition-all">
                         Details bekijken
                       </button>
                       <button className="px-4 py-2 border-2 border-neutral-200 text-neutral-700 rounded-lg font-medium hover:border-secondary-blue hover:text-secondary-blue transition-all">
