@@ -52,7 +52,7 @@ export default function HeroSection() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Slimmer verzenden met{' '}
-              <span className="text-secondary-blue">PostNL</span>{' '}
+              <span style={{ color: '#486D91' }}>PostNL</span>{' '}
               integratie
             </motion.h1>
 
