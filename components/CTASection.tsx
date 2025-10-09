@@ -70,7 +70,7 @@ export default function CTASection() {
           >
             {/* Headline */}
             <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-              Klaar om Uw Verzending te Transformeren?
+              Klaar om uw verzending te transformeren?
             </h2>
 
             {/* Subtext */}
@@ -131,7 +131,7 @@ export default function CTASection() {
                 />
 
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Start Uw Gratis Proefperiode
+                  Start uw gratis proefperiode
                 </span>
                 <ArrowRight
                   className="relative z-10 group-hover:translate-x-1 group-hover:text-white transition-all duration-300"
@@ -150,12 +150,12 @@ export default function CTASection() {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-sm text-white/70">Actieve Gebruikers</div>
+                <div className="text-sm text-white/70">Actieve gebruikers</div>
               </div>
               <div className="w-px h-12 bg-white/30" />
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-1">1M+</div>
-                <div className="text-sm text-white/70">Labels Gemaakt</div>
+                <div className="text-sm text-white/70">Labels gemaakt</div>
               </div>
               <div className="w-px h-12 bg-white/30" />
               <div className="text-center">

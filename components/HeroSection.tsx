@@ -51,9 +51,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Slimmer Verzenden met{' '}
+              Slimmer verzenden met{' '}
               <span className="text-secondary-blue">PostNL</span>{' '}
-              Integratie
+              integratie
             </motion.h1>
 
             <motion.p
@@ -76,7 +76,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Gratis Proefperiode
+                Start gratis proefperiode
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </motion.button>
 
@@ -86,7 +86,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Play size={20} className="group-hover:scale-110 transition-transform" />
-                Bekijk Demo
+                Bekijk demo
               </motion.button>
             </motion.div>
           </motion.div>

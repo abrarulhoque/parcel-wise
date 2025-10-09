@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'luc
 
 const footerLinks = {
   bedrijf: [
-    { label: 'Over Ons', href: '#' },
+    { label: 'Over ons', href: '#' },
     { label: 'Carrières', href: '#' },
     { label: 'Pers', href: '#' },
     { label: 'Contact', href: '#' },

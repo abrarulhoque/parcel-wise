@@ -46,7 +46,7 @@ export default function DashboardPreview() {
             Live Demo
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Alles Wat U Nodig Heeft in Één Dashboard
+            Alles wat u nodig heeft in één dashboard
           </h2>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
             Beheer bestellingen, maak labels, volg zendingen en analyseer prestaties vanuit één intuïtieve interface.
@@ -80,8 +80,8 @@ export default function DashboardPreview() {
               {/* Stats cards */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Package, label: 'Totaal Zendingen', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
-                  { icon: TrendingUp, label: 'Actieve Bestellingen', value: '89', change: 'Wachten op labels', color: 'from-primary-blue to-accent-blue' },
+                  { icon: Package, label: 'Totaal zendingen', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
+                  { icon: TrendingUp, label: 'Actieve bestellingen', value: '89', change: 'Wachten op labels', color: 'from-primary-blue to-accent-blue' },
                   { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: 'from-accent-blue to-secondary-blue' },
                   { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: 'from-secondary-blue to-blue-600' },
                 ].map((stat, index) => {
@@ -147,7 +147,7 @@ export default function DashboardPreview() {
                 transition={{ delay: 1.2, duration: 0.6 }}
                 className="bg-gradient-to-br from-neutral-700/30 to-neutral-800/30 backdrop-blur-sm rounded-lg p-6 border border-white/10"
               >
-                <h3 className="text-lg font-semibold text-white mb-4">Recente Bestellingen</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">Recente bestellingen</h3>
                 <div className="space-y-3">
                   {[1, 2, 3].map((_, i) => (
                     <motion.div
@@ -187,7 +187,7 @@ export default function DashboardPreview() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              Ontdek Dashboard
+              Ontdek dashboard
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </motion.button>
           </motion.div>

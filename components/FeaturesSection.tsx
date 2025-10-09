@@ -6,31 +6,31 @@ import { Printer, MapPin, TrendingDown, TrendingUp, Settings, FileText } from 'l
 const features = [
   {
     icon: Printer,
-    title: 'Direct Label Aanmaken',
+    title: 'Direct label aanmaken',
     description: 'Maak PostNL verzendlabels in seconden. Druk tot 500 labels tegelijk af met geautomatiseerde adresvalidatie.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: MapPin,
-    title: 'Live Tracking',
+    title: 'Live tracking',
     description: 'Monitor alle zendingen in één dashboard. Automatische tracking updates houden u en uw klanten 24/7 op de hoogte.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingDown,
-    title: 'Kosten Optimalisatie',
+    title: 'Kosten optimalisatie',
     description: 'Toegang tot gereduceerde PostNL tarieven en slimme verzendadviezen. Bespaar tot 40% op binnenlandse en internationale verzendingen.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingUp,
-    title: 'Analytics & Inzichten',
+    title: 'Analytics & inzichten',
     description: 'Volg vervoerdersprestaties, verzendkosten en leveringssuccespercentages. Neem datagedreven beslissingen om activiteiten te verbeteren.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: Settings,
-    title: 'Geautomatiseerde Workflows',
+    title: 'Geautomatiseerde workflows',
     description: 'Stel regels in om automatisch verzendmethoden toe te wijzen, labels te genereren en meldingen te verzenden. Verminder handmatig werk met 70%.',
     color: 'from-primary-blue to-accent-blue'
   },
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Alles Wat U Nodig Heeft om Slimmer te Verzenden
+            Alles wat u nodig heeft om slimmer te verzenden
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
             Krachtige functies ontworpen om uw verzendactiviteiten te stroomlijnen en uw klanten te plezieren

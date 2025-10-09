@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Vertrouwd door Bedrijven Zoals Het Uwe
+            Vertrouwd door bedrijven zoals het uwe
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
             Zie wat onze klanten te zeggen hebben over hun ervaring met ParcelWise
@@ -200,10 +200,10 @@ export default function TestimonialsSection() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { value: '500+', label: 'Tevreden Klanten' },
+            { value: '500+', label: 'Tevreden klanten' },
             { value: '98%', label: 'Tevredenheidspercentage' },
-            { value: '1M+', label: 'Labels Gemaakt' },
-            { value: '4.9/5', label: 'Gemiddelde Score' },
+            { value: '1M+', label: 'Labels gemaakt' },
+            { value: '4.9/5', label: 'Gemiddelde score' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

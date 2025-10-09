@@ -7,25 +7,25 @@ const steps = [
   {
     number: 1,
     icon: UserPlus,
-    title: 'Maak Account Aan',
+    title: 'Maak account aan',
     description: 'Meld u gratis aan en krijg direct toegang tot uw dashboard. Geen creditcard nodig om te beginnen.',
   },
   {
     number: 2,
     icon: Tag,
-    title: 'Voer Verzendgegevens In',
+    title: 'Voer verzendgegevens in',
     description: 'Vul afzender- en ontvangersgegevens, pakketdetails in en selecteer uw gewenste PostNL service.',
   },
   {
     number: 3,
     icon: Printer,
-    title: 'Druk Labels Af',
+    title: 'Druk labels af',
     description: 'Genereer en druk verzendlabels direct af. Download als PDF of druk direct af vanuit uw browser.',
   },
   {
     number: 4,
     icon: Activity,
-    title: 'Volg Zendingen',
+    title: 'Volg zendingen',
     description: 'Monitor al uw zendingen in real-time met automatische tracking updates en leveringsmeldingen.',
   },
 ];
@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Hoe Het Werkt
+            Hoe het werkt
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
             Begin met verzenden via PostNL in slechts vier eenvoudige stappen
@@ -141,7 +141,7 @@ export default function HowItWorksSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Begin Nu
+            Begin nu
           </motion.button>
         </motion.div>
       </div>
