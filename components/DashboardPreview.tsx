@@ -80,10 +80,10 @@ export default function DashboardPreview() {
               {/* Stats cards */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Package, label: 'Totaal zendingen', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
+                  { icon: Package, label: 'Totaal zendingen', value: '1,247', change: '+12.5%', color: 'from-primary-blue to-accent-blue' },
                   { icon: TrendingUp, label: 'Actieve bestellingen', value: '89', change: 'Wachten op labels', color: 'from-primary-blue to-accent-blue' },
-                  { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: 'from-accent-blue to-secondary-blue' },
-                  { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: 'from-secondary-blue to-blue-600' },
+                  { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: 'from-primary-blue to-accent-blue' },
+                  { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: 'from-primary-blue to-accent-blue' },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
                   return (

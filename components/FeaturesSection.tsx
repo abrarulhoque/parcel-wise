@@ -72,11 +72,8 @@ export default function FeaturesSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ y: -8 }}
-                className="group relative bg-white rounded-xl p-8 border border-neutral-100 hover:border-transparent hover:shadow-2xl transition-all duration-300"
+                className="group relative bg-white rounded-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300"
               >
-                {/* Gradient border on hover */}
-                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10 blur-xl`} />
-
                 <div className="relative z-10">
                   {/* Icon */}
                   <motion.div
@@ -88,26 +85,13 @@ export default function FeaturesSection() {
                   </motion.div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-secondary-blue transition-all duration-300">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3">
                     {feature.title}
                   </h3>
 
                   <p className="text-neutral-600 leading-relaxed">
                     {feature.description}
                   </p>
-
-                  {/* Decorative element */}
-                  <motion.div
-                    className={`absolute top-4 right-4 w-20 h-20 rounded-full bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-2xl`}
-                    animate={{
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
                 </div>
               </motion.div>
             );
