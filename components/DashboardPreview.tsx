@@ -46,10 +46,10 @@ export default function DashboardPreview() {
             Live Demo
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Everything You Need in One Dashboard
+            Alles Wat U Nodig Heeft in Één Dashboard
           </h2>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-            Manage orders, create labels, track shipments, and analyze performance from a single, intuitive interface.
+            Beheer bestellingen, maak labels, volg zendingen en analyseer prestaties vanuit één intuïtieve interface.
           </p>
         </motion.div>
 
@@ -80,10 +80,10 @@ export default function DashboardPreview() {
               {/* Stats cards */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Package, label: 'Total Shipments', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
-                  { icon: TrendingUp, label: 'Active Orders', value: '89', change: 'Awaiting labels', color: 'from-primary-blue to-accent-blue' },
-                  { icon: Users, label: 'In Transit', value: '342', change: '98% on time', color: 'from-accent-blue to-secondary-blue' },
-                  { icon: DollarSign, label: 'Cost Savings', value: '€3,459', change: '38% savings', color: 'from-secondary-blue to-blue-600' },
+                  { icon: Package, label: 'Totaal Zendingen', value: '1,247', change: '+12.5%', color: 'from-secondary-blue to-primary-blue' },
+                  { icon: TrendingUp, label: 'Actieve Bestellingen', value: '89', change: 'Wachten op labels', color: 'from-primary-blue to-accent-blue' },
+                  { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: 'from-accent-blue to-secondary-blue' },
+                  { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: 'from-secondary-blue to-blue-600' },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
                   return (
@@ -116,8 +116,8 @@ export default function DashboardPreview() {
                 className="bg-gradient-to-br from-neutral-700/30 to-neutral-800/30 backdrop-blur-sm rounded-lg p-6 border border-white/10"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-semibold text-white">Shipping Activity</h3>
-                  <div className="text-xs text-neutral-400">Last 30 days</div>
+                  <h3 className="text-lg font-semibold text-white">Verzendactiviteit</h3>
+                  <div className="text-xs text-neutral-400">Laatste 30 dagen</div>
                 </div>
 
                 {/* Animated bars */}
@@ -147,7 +147,7 @@ export default function DashboardPreview() {
                 transition={{ delay: 1.2, duration: 0.6 }}
                 className="bg-gradient-to-br from-neutral-700/30 to-neutral-800/30 backdrop-blur-sm rounded-lg p-6 border border-white/10"
               >
-                <h3 className="text-lg font-semibold text-white mb-4">Recent Orders</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">Recente Bestellingen</h3>
                 <div className="space-y-3">
                   {[1, 2, 3].map((_, i) => (
                     <motion.div
@@ -165,7 +165,7 @@ export default function DashboardPreview() {
                         <div className="h-2 bg-neutral-700/50 rounded w-32" />
                       </div>
                       <div className="px-3 py-1 bg-secondary-blue/20 text-secondary-blue text-xs rounded-full">
-                        In Transit
+                        Onderweg
                       </div>
                     </motion.div>
                   ))}
@@ -187,7 +187,7 @@ export default function DashboardPreview() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              Explore Dashboard
+              Ontdek Dashboard
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </motion.button>
           </motion.div>

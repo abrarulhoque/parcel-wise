@@ -10,8 +10,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Features', href: '#features' },
-    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Functies', href: '#features' },
+    { name: 'Hoe Het Werkt', href: '#how-it-works' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
 
@@ -48,7 +48,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Log In
+                Inloggen
               </motion.button>
             </Link>
             <Link href="/register">
@@ -57,7 +57,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Sign Up
+                Aanmelden
               </motion.button>
             </Link>
           </div>
@@ -95,12 +95,12 @@ export default function Navbar() {
             <div className="pt-4 space-y-3 border-t border-neutral-200">
               <Link href="/login" onClick={() => setIsOpen(false)}>
                 <button className="w-full px-6 py-2.5 text-neutral-700 hover:text-secondary-blue font-semibold transition-colors text-center border border-neutral-200 rounded-lg">
-                  Log In
+                  Inloggen
                 </button>
               </Link>
               <Link href="/register" onClick={() => setIsOpen(false)}>
                 <button className="w-full px-6 py-2.5 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold shadow-md">
-                  Sign Up
+                  Aanmelden
                 </button>
               </Link>
             </div>

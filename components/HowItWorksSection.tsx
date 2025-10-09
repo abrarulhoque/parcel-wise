@@ -7,26 +7,26 @@ const steps = [
   {
     number: 1,
     icon: UserPlus,
-    title: 'Create Account',
-    description: 'Sign up for free and get instant access to your dashboard. No credit card required to get started.',
+    title: 'Maak Account Aan',
+    description: 'Meld u gratis aan en krijg direct toegang tot uw dashboard. Geen creditcard nodig om te beginnen.',
   },
   {
     number: 2,
     icon: Tag,
-    title: 'Enter Shipping Details',
-    description: 'Fill in sender and recipient information, package details, and select your preferred PostNL service.',
+    title: 'Voer Verzendgegevens In',
+    description: 'Vul afzender- en ontvangersgegevens, pakketdetails in en selecteer uw gewenste PostNL service.',
   },
   {
     number: 3,
     icon: Printer,
-    title: 'Print Labels',
-    description: 'Generate and print shipping labels instantly. Download as PDF or print directly from your browser.',
+    title: 'Druk Labels Af',
+    description: 'Genereer en druk verzendlabels direct af. Download als PDF of druk direct af vanuit uw browser.',
   },
   {
     number: 4,
     icon: Activity,
-    title: 'Track Shipments',
-    description: 'Monitor all your shipments in real-time with automatic tracking updates and delivery notifications.',
+    title: 'Volg Zendingen',
+    description: 'Monitor al uw zendingen in real-time met automatische tracking updates en leveringsmeldingen.',
   },
 ];
 
@@ -42,10 +42,10 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            How It Works
+            Hoe Het Werkt
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
-            Start shipping with PostNL in just four simple steps
+            Begin met verzenden via PostNL in slechts vier eenvoudige stappen
           </p>
         </motion.div>
 
@@ -141,7 +141,7 @@ export default function HowItWorksSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get Started Now
+            Begin Nu
           </motion.button>
         </motion.div>
       </div>

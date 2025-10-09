@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const testimonials = [
   {
-    quote: "We reduced our shipping time by 60% and costs by 35%. The PostNL integration is seamless and the dashboard is incredibly intuitive.",
+    quote: "We hebben onze verzendtijd met 60% verminderd en de kosten met 35%. De PostNL integratie is naadloos en het dashboard is ongelooflijk intuïtief.",
     name: "Marieke van der Berg",
     company: "DirectSales BV",
     location: "Amsterdam",
@@ -14,7 +14,7 @@ const testimonials = [
     avatar: "👩‍💼",
   },
   {
-    quote: "ParcelWise transformed our logistics operations. The automation features alone save us 10 hours per week. Highly recommended!",
+    quote: "ParcelWise heeft onze logistieke activiteiten getransformeerd. Alleen de automatiseringsfuncties besparen ons al 10 uur per week. Zeer aanbevolen!",
     name: "Jan de Vries",
     company: "TechStore Online",
     location: "Rotterdam",
@@ -22,7 +22,7 @@ const testimonials = [
     avatar: "👨‍💻",
   },
   {
-    quote: "The best shipping platform we've used. Customer support is excellent and the analytics help us make smarter decisions every day.",
+    quote: "Het beste verzendplatform dat we hebben gebruikt. Klantenservice is uitstekend en de analytics helpen ons elke dag slimmere beslissingen te nemen.",
     name: "Sophie Bakker",
     company: "Fashion Hub NL",
     location: "Utrecht",
@@ -30,7 +30,7 @@ const testimonials = [
     avatar: "👩‍🎨",
   },
   {
-    quote: "Integration was incredibly easy. We were up and running in less than an hour. The bulk label printing feature is a game-changer.",
+    quote: "Integratie was ongelooflijk eenvoudig. We waren in minder dan een uur operationeel. De bulklabel printfunctie is een game-changer.",
     name: "Michael Peters",
     company: "ElectroShop",
     location: "Den Haag",
@@ -70,10 +70,10 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Trusted by Businesses Like Yours
+            Vertrouwd door Bedrijven Zoals Het Uwe
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
-            See what our customers have to say about their experience with ParcelWise
+            Zie wat onze klanten te zeggen hebben over hun ervaring met ParcelWise
           </p>
         </motion.div>
 
@@ -200,10 +200,10 @@ export default function TestimonialsSection() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { value: '500+', label: 'Happy Customers' },
-            { value: '98%', label: 'Satisfaction Rate' },
-            { value: '1M+', label: 'Labels Created' },
-            { value: '4.9/5', label: 'Average Rating' },
+            { value: '500+', label: 'Tevreden Klanten' },
+            { value: '98%', label: 'Tevredenheidspercentage' },
+            { value: '1M+', label: 'Labels Gemaakt' },
+            { value: '4.9/5', label: 'Gemiddelde Score' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

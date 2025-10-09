@@ -51,9 +51,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Ship Smarter with{' '}
+              Slimmer Verzenden met{' '}
               <span className="text-secondary-blue">PostNL</span>{' '}
-              Integration
+              Integratie
             </motion.h1>
 
             <motion.p
@@ -62,7 +62,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Create shipping labels, track orders, and manage your logistics in one powerful dashboard. Save time and reduce costs by up to 40%.
+              Maak verzendlabels, volg bestellingen en beheer uw logistiek in één krachtig dashboard. Bespaar tijd en verlaag kosten met wel 40%.
             </motion.p>
 
             <motion.div
@@ -76,7 +76,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Free Trial
+                Start Gratis Proefperiode
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </motion.button>
 
@@ -86,7 +86,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Play size={20} className="group-hover:scale-110 transition-transform" />
-                Watch Demo
+                Bekijk Demo
               </motion.button>
             </motion.div>
           </motion.div>

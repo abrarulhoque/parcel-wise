@@ -4,29 +4,29 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const footerLinks = {
-  company: [
-    { label: 'About', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Press', href: '#' },
+  bedrijf: [
+    { label: 'Over Ons', href: '#' },
+    { label: 'Carrières', href: '#' },
+    { label: 'Pers', href: '#' },
     { label: 'Contact', href: '#' },
   ],
   product: [
-    { label: 'Features', href: '#' },
-    { label: 'Pricing', href: '#' },
-    { label: 'Integrations', href: '#' },
+    { label: 'Functies', href: '#' },
+    { label: 'Prijzen', href: '#' },
+    { label: 'Integraties', href: '#' },
     { label: 'API', href: '#' },
   ],
-  resources: [
-    { label: 'Documentation', href: '#' },
+  bronnen: [
+    { label: 'Documentatie', href: '#' },
     { label: 'Blog', href: '#' },
-    { label: 'Help Center', href: '#' },
+    { label: 'Helpcentrum', href: '#' },
     { label: 'Status', href: '#' },
   ],
-  legal: [
+  juridisch: [
     { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
-    { label: 'Security', href: '#' },
-    { label: 'GDPR', href: '#' },
+    { label: 'Voorwaarden', href: '#' },
+    { label: 'Beveiliging', href: '#' },
+    { label: 'AVG', href: '#' },
   ],
 };
 
@@ -59,7 +59,7 @@ export default function Footer() {
             </div>
 
             <p className="text-neutral-400 mb-6 leading-relaxed">
-              Ship smarter with PostNL integration. Create labels, track orders, and manage logistics in one powerful dashboard.
+              Verzend slimmer met PostNL integratie. Maak labels, volg bestellingen en beheer logistiek in één krachtig dashboard.
             </p>
 
             {/* Contact info */}
@@ -74,7 +74,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-neutral-400">
                 <MapPin size={18} />
-                <span>Amsterdam, Netherlands</span>
+                <span>Amsterdam, Nederland</span>
               </div>
             </div>
           </motion.div>
@@ -118,7 +118,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Copyright */}
             <div className="text-neutral-400 text-sm">
-              © {new Date().getFullYear()} ParcelWise. All rights reserved.
+              © {new Date().getFullYear()} ParcelWise. Alle rechten voorbehouden.
             </div>
 
             {/* Social links */}

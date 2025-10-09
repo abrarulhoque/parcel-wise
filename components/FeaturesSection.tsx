@@ -6,38 +6,38 @@ import { Printer, MapPin, TrendingDown, TrendingUp, Settings, FileText } from 'l
 const features = [
   {
     icon: Printer,
-    title: 'Instant Label Creation',
-    description: 'Create PostNL shipping labels in seconds. Bulk print up to 500 labels at once with automated address validation.',
+    title: 'Direct Label Aanmaken',
+    description: 'Maak PostNL verzendlabels in seconden. Druk tot 500 labels tegelijk af met geautomatiseerde adresvalidatie.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: MapPin,
-    title: 'Real-Time Tracking',
-    description: 'Monitor all shipments in one dashboard. Automatic tracking updates keep you and your customers informed 24/7.',
+    title: 'Live Tracking',
+    description: 'Monitor alle zendingen in één dashboard. Automatische tracking updates houden u en uw klanten 24/7 op de hoogte.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingDown,
-    title: 'Cost Optimization',
-    description: 'Access discounted PostNL rates and smart shipping suggestions. Save up to 40% on domestic and international shipping.',
+    title: 'Kosten Optimalisatie',
+    description: 'Toegang tot gereduceerde PostNL tarieven en slimme verzendadviezen. Bespaar tot 40% op binnenlandse en internationale verzendingen.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: TrendingUp,
-    title: 'Analytics & Insights',
-    description: 'Track carrier performance, shipping costs, and delivery success rates. Make data-driven decisions to improve operations.',
+    title: 'Analytics & Inzichten',
+    description: 'Volg vervoerdersprestaties, verzendkosten en leveringssuccespercentages. Neem datagedreven beslissingen om activiteiten te verbeteren.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: Settings,
-    title: 'Automated Workflows',
-    description: 'Set rules to auto-assign shipping methods, generate labels, and send notifications. Reduce manual work by 70%.',
+    title: 'Geautomatiseerde Workflows',
+    description: 'Stel regels in om automatisch verzendmethoden toe te wijzen, labels te genereren en meldingen te verzenden. Verminder handmatig werk met 70%.',
     color: 'from-primary-blue to-accent-blue'
   },
   {
     icon: FileText,
-    title: 'Invoice Management',
-    description: 'View and download all shipping invoices in one place. Export reports for accounting and reconciliation.',
+    title: 'Factuurbeheer',
+    description: 'Bekijk en download alle verzendfacturen op één plek. Exporteer rapporten voor boekhouding en reconciliatie.',
     color: 'from-primary-blue to-accent-blue'
   },
 ];
@@ -54,10 +54,10 @@ export default function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-            Everything You Need to Ship Smarter
+            Alles Wat U Nodig Heeft om Slimmer te Verzenden
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
-            Powerful features designed to streamline your shipping operations and delight your customers
+            Krachtige functies ontworpen om uw verzendactiviteiten te stroomlijnen en uw klanten te plezieren
           </p>
         </motion.div>
 

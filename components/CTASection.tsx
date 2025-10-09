@@ -70,12 +70,12 @@ export default function CTASection() {
           >
             {/* Headline */}
             <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-              Ready to Transform Your Shipping?
+              Klaar om Uw Verzending te Transformeren?
             </h2>
 
             {/* Subtext */}
             <p className="text-xl lg:text-2xl text-white/90">
-              Join 500+ businesses shipping smarter with PostNL integration
+              Sluit u aan bij 500+ bedrijven die slimmer verzenden met PostNL integratie
             </p>
 
             {/* Benefits */}
@@ -87,9 +87,9 @@ export default function CTASection() {
               className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white"
             >
               {[
-                'No credit card required',
-                '14-day free trial',
-                'Cancel anytime',
+                'Geen creditcard vereist',
+                '14 dagen gratis proberen',
+                'Altijd opzegbaar',
               ].map((benefit, index) => (
                 <motion.div
                   key={benefit}
@@ -131,7 +131,7 @@ export default function CTASection() {
                 />
 
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Start Your Free Trial
+                  Start Uw Gratis Proefperiode
                 </span>
                 <ArrowRight
                   className="relative z-10 group-hover:translate-x-1 group-hover:text-white transition-all duration-300"
@@ -150,17 +150,17 @@ export default function CTASection() {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-sm text-white/70">Active Users</div>
+                <div className="text-sm text-white/70">Actieve Gebruikers</div>
               </div>
               <div className="w-px h-12 bg-white/30" />
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-1">1M+</div>
-                <div className="text-sm text-white/70">Labels Created</div>
+                <div className="text-sm text-white/70">Labels Gemaakt</div>
               </div>
               <div className="w-px h-12 bg-white/30" />
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-1">98%</div>
-                <div className="text-sm text-white/70">Satisfaction</div>
+                <div className="text-sm text-white/70">Tevredenheid</div>
               </div>
             </motion.div>
           </motion.div>
