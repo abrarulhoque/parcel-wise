@@ -77,10 +77,10 @@ export default function LoginPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-              Welcome Back
+              Welkom terug
             </h1>
             <p className="text-neutral-500">
-              Log in to your dashboard
+              Log in op uw dashboard
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function LoginPage() {
             {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
-                Email Address
+                E-mailadres
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -110,7 +110,7 @@ export default function LoginPage() {
             {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-neutral-700 mb-2">
-                Password
+                Wachtwoord
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -137,10 +137,10 @@ export default function LoginPage() {
                   onChange={(e) => setFormData({ ...formData, remember: e.target.checked })}
                   className="w-4 h-4 text-secondary-blue border-neutral-300 rounded focus:ring-secondary-blue"
                 />
-                <span className="ml-2 text-sm text-neutral-600">Remember me</span>
+                <span className="ml-2 text-sm text-neutral-600">Onthoud mij</span>
               </label>
               <Link href="#" className="text-sm text-secondary-blue hover:text-primary-blue transition-colors">
-                Forgot password?
+                Wachtwoord vergeten?
               </Link>
             </div>
 
@@ -155,11 +155,11 @@ export default function LoginPage() {
               {isLoading ? (
                 <>
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Logging in...
+                  Inloggen...
                 </>
               ) : (
                 <>
-                  Log In
+                  Inloggen
                   <ArrowRight size={20} />
                 </>
               )}
@@ -172,7 +172,7 @@ export default function LoginPage() {
               <div className="w-full border-t border-neutral-200" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-white text-neutral-500">Don't have an account?</span>
+              <span className="px-4 bg-white text-neutral-500">Nog geen account?</span>
             </div>
           </div>
 
@@ -183,7 +183,7 @@ export default function LoginPage() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Create Account
+              Maak account aan
             </motion.button>
           </Link>
         </div>
@@ -196,7 +196,7 @@ export default function LoginPage() {
           className="text-center mt-6"
         >
           <Link href="/" className="text-white hover:text-neutral-200 transition-colors text-sm">
-            ← Back to Home
+            ← Terug naar home
           </Link>
         </motion.div>
       </motion.div>

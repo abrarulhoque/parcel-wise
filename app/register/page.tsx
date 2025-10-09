@@ -47,84 +47,14 @@ export default function RegisterPage() {
   };
 
   const strengthColors = ['bg-error', 'bg-warning', 'bg-warning', 'bg-success'];
-  const strengthLabels = ['Weak', 'Fair', 'Good', 'Strong'];
+  const strengthLabels = ['Zwak', 'Redelijk', 'Goed', 'Sterk'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-primary-blue/10 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Left Side - Benefits */}
+      <div className="w-full max-w-lg">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hidden lg:block bg-gradient-to-br from-secondary-blue to-primary-blue rounded-2xl p-12 text-white relative overflow-hidden"
-          >
-            {/* Background decoration */}
-            <motion.div
-              className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-
-            <div className="relative z-10">
-              <h2 className="text-4xl font-bold mb-6">
-                Start Shipping in Minutes
-              </h2>
-
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check size={16} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Free 14-Day Trial</h3>
-                    <p className="text-white/80 text-sm">No credit card required to get started</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check size={16} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Instant Access</h3>
-                    <p className="text-white/80 text-sm">Create labels immediately after signup</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check size={16} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Save Up to 40%</h3>
-                    <p className="text-white/80 text-sm">Access discounted PostNL shipping rates</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border-t border-white/20 pt-6">
-                <p className="text-sm text-white/70 italic">
-                  "We reduced our shipping time by 60% and costs by 35%. The PostNL integration is seamless and the dashboard is incredibly intuitive."
-                </p>
-                <p className="text-sm font-semibold mt-3">
-                  — Marieke van der Berg, DirectSales BV
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
           >
@@ -139,10 +69,10 @@ export default function RegisterPage() {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-                Create Your Account
+                Maak uw account aan
               </h1>
               <p className="text-neutral-500">
-                Get started with your 14-day free trial
+                Gratis account aanmaken
               </p>
             </div>
 
@@ -151,7 +81,7 @@ export default function RegisterPage() {
               {/* Company Name */}
               <div>
                 <label htmlFor="companyName" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Company Name
+                  Bedrijfsnaam
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -172,7 +102,7 @@ export default function RegisterPage() {
               {/* Full Name */}
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Full Name
+                  Volledige naam
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -193,7 +123,7 @@ export default function RegisterPage() {
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Email Address
+                  E-mailadres
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -214,7 +144,7 @@ export default function RegisterPage() {
               {/* Phone */}
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Phone Number
+                  Telefoonnummer
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -235,7 +165,7 @@ export default function RegisterPage() {
               {/* Password */}
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Password
+                  Wachtwoord
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -265,7 +195,7 @@ export default function RegisterPage() {
                       ))}
                     </div>
                     <p className="text-xs text-neutral-500">
-                      Strength: {passwordStrength > 0 ? strengthLabels[passwordStrength - 1] : 'Too weak'}
+                      Sterkte: {passwordStrength > 0 ? strengthLabels[passwordStrength - 1] : 'Te zwak'}
                     </p>
                   </div>
                 )}
@@ -274,7 +204,7 @@ export default function RegisterPage() {
               {/* Confirm Password */}
               <div>
                 <label htmlFor="confirmPassword" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Confirm Password
+                  Bevestig wachtwoord
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -303,13 +233,13 @@ export default function RegisterPage() {
                     required
                   />
                   <span className="ml-2 text-sm text-neutral-600">
-                    I agree to the{' '}
+                    Ik ga akkoord met de{' '}
                     <Link href="#" className="text-secondary-blue hover:text-primary-blue">
-                      Terms & Conditions
+                      Algemene voorwaarden
                     </Link>{' '}
-                    and{' '}
+                    en het{' '}
                     <Link href="#" className="text-secondary-blue hover:text-primary-blue">
-                      Privacy Policy
+                      Privacybeleid
                     </Link>
                   </span>
                 </label>
@@ -322,7 +252,7 @@ export default function RegisterPage() {
                     className="w-4 h-4 mt-0.5 text-secondary-blue border-neutral-300 rounded focus:ring-secondary-blue"
                   />
                   <span className="ml-2 text-sm text-neutral-600">
-                    Send me shipping tips and updates (optional)
+                    Stuur mij verzendtips en updates (optioneel)
                   </span>
                 </label>
               </div>
@@ -338,11 +268,11 @@ export default function RegisterPage() {
                 {isLoading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Creating Account...
+                    Account aanmaken...
                   </>
                 ) : (
                   <>
-                    Create Account
+                    Maak account aan
                     <ArrowRight size={20} />
                   </>
                 )}
@@ -352,9 +282,9 @@ export default function RegisterPage() {
             {/* Login Link */}
             <div className="mt-6 text-center">
               <span className="text-sm text-neutral-600">
-                Already have an account?{' '}
+                Heeft u al een account?{' '}
                 <Link href="/login" className="text-secondary-blue hover:text-primary-blue font-semibold">
-                  Log in
+                  Inloggen
                 </Link>
               </span>
             </div>
@@ -362,11 +292,10 @@ export default function RegisterPage() {
             {/* Back to Home */}
             <div className="mt-4 text-center">
               <Link href="/" className="text-sm text-neutral-500 hover:text-neutral-700 transition-colors">
-                ← Back to Home
+                ← Terug naar home
               </Link>
             </div>
           </motion.div>
-        </div>
       </div>
     </div>
   );
