@@ -1,38 +1,45 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { UserPlus, Tag, Printer, Activity } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Activity, Printer, Tag, UserPlus } from "lucide-react";
 
 const steps = [
   {
     number: 1,
     icon: UserPlus,
-    title: 'Maak account aan',
-    description: 'Meld u gratis aan en krijg direct toegang tot uw dashboard. Geen creditcard nodig om te beginnen.',
+    title: "Maak account aan",
+    description:
+      "Meld u gratis aan en krijg direct toegang tot uw dashboard. Geen creditcard nodig om te beginnen.",
   },
   {
     number: 2,
     icon: Tag,
-    title: 'Voer verzendgegevens in',
-    description: 'Vul afzender- en ontvangersgegevens, pakketdetails in en selecteer uw gewenste PostNL service.',
+    title: "Voer verzendgegevens in",
+    description:
+      "Vul afzender- en ontvangersgegevens, pakketdetails in en selecteer uw gewenste PostNL service.",
   },
   {
     number: 3,
     icon: Printer,
-    title: 'Druk labels af',
-    description: 'Genereer en druk verzendlabels direct af. Download als PDF of druk direct af vanuit uw browser.',
+    title: "Druk labels af",
+    description:
+      "Genereer en druk verzendlabels direct af. Download als PDF of druk direct af vanuit uw browser.",
   },
   {
     number: 4,
     icon: Activity,
-    title: 'Volg zendingen',
-    description: 'Monitor al uw zendingen in real-time met automatische tracking updates en leveringsmeldingen.',
+    title: "Volg zendingen",
+    description:
+      "Monitor al uw zendingen in real-time met automatische tracking updates en leveringsmeldingen.",
   },
 ];
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-primary-blue/5">
+    <section
+      id="how-it-works"
+      className="py-24 bg-gradient-to-br from-neutral-50 via-neutral-100/30 to-primary-blue/5"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,7 +52,8 @@ export default function HowItWorksSection() {
             Hoe het werkt
           </h2>
           <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
-            Begin met verzenden via PostNL in slechts vier eenvoudige stappen
+            Begin met verzenden via ParcelWise in slechts vier eenvoudige
+            stappen
           </p>
         </motion.div>
 
