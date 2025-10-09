@@ -16,7 +16,6 @@ export default function CreateLabelPage() {
     // Step 1: Order Details
     fullName: '',
     email: '',
-    phone: '',
     street: '',
     houseNumber: '',
     postalCode: '',
@@ -144,7 +143,7 @@ export default function CreateLabelPage() {
               {/* Customer Information */}
               <div>
                 <h3 className="text-lg font-semibold text-neutral-900 mb-4">Customer Information</h3>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-neutral-700 mb-2">Full Name *</label>
                     <input
@@ -157,25 +156,13 @@ export default function CreateLabelPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Email *</label>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">Email</label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
                       placeholder="john@example.com"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">Phone *</label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent outline-none"
-                      placeholder="+31 6 12345678"
-                      required
                     />
                   </div>
                 </div>
@@ -443,8 +430,7 @@ export default function CreateLabelPage() {
                   <div>
                     <h3 className="text-sm font-semibold text-neutral-500 uppercase mb-2">Customer</h3>
                     <p className="text-neutral-900">{formData.fullName}</p>
-                    <p className="text-sm text-neutral-600">{formData.email}</p>
-                    <p className="text-sm text-neutral-600">{formData.phone}</p>
+                    {formData.email && <p className="text-sm text-neutral-600">{formData.email}</p>}
                   </div>
 
                   <div>
@@ -782,7 +768,6 @@ export default function CreateLabelPage() {
                         setFormData({
                           fullName: '',
                           email: '',
-                          phone: '',
                           street: '',
                           houseNumber: '',
                           postalCode: '',
