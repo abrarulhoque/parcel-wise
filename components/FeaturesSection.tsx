@@ -8,37 +8,37 @@ const features = [
     icon: Printer,
     title: 'Direct label aanmaken',
     description: 'Maak PostNL verzendlabels in seconden. Druk tot 500 labels tegelijk af met geautomatiseerde adresvalidatie.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
   {
     icon: MapPin,
     title: 'Live tracking',
     description: 'Monitor alle zendingen in één dashboard. Automatische tracking updates houden u en uw klanten 24/7 op de hoogte.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
   {
     icon: TrendingDown,
     title: 'Kostenoptimalisatie',
     description: 'Profiteer van gereduceerde PostNL-tarieven en slimme verzendadviezen. Verstuur sneller, slimmer en efficiënter – zowel nationaal als internationaal.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
   {
     icon: TrendingUp,
     title: 'Data & Inzichten',
     description: 'Krijg duidelijk inzicht in vervoerdersprestaties, verzendkosten en afleveringssucces. Maak datagedreven keuzes om je resultaten te verbeteren.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
   {
     icon: Settings,
     title: 'Geautomatiseerde workflows',
     description: 'Regel verzendmethoden en meldingen efficiënt en behoud volledige controle over handmatige labelaanmaak.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
   {
     icon: FileText,
     title: 'Factuurbeheer',
     description: 'Bekijk en download verzendfacturen op één plek. Exporteer eenvoudig rapporten voor je boekhouding.',
-    color: 'from-primary-blue to-accent-blue'
+    color: '[#325C84]'
   },
 ];
 
@@ -77,7 +77,7 @@ export default function FeaturesSection() {
                 <div className="relative z-10">
                   {/* Icon */}
                   <motion.div
-                    className={`w-14 h-14 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 shadow-lg`}
+                    className={`w-14 h-14 rounded-lg bg-${feature.color} flex items-center justify-center mb-6 shadow-lg`}
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >

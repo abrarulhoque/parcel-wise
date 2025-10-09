@@ -72,7 +72,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <motion.button
-                className="group bg-gradient-to-r from-primary-blue to-accent-blue text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
+                className="group bg-[#325C84] text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -120,7 +120,7 @@ export default function HeroSection() {
                     <div className="h-4 bg-neutral-100 rounded w-3/4"></div>
                     <div className="h-4 bg-neutral-100 rounded w-1/2"></div>
                   </div>
-                  <div className="h-24 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg opacity-20"></div>
+                  <div className="h-24 bg-[#325C84] rounded-lg opacity-20"></div>
                   <div className="space-y-2">
                     <div className="h-3 bg-neutral-100 rounded w-full"></div>
                     <div className="h-3 bg-neutral-100 rounded w-5/6"></div>

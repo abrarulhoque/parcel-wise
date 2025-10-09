@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-secondary-blue via-primary-blue to-accent-blue transform -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-[#325C84] transform -translate-y-1/2" />
 
           {/* Steps */}
           <div className="grid lg:grid-cols-4 gap-8 relative">
@@ -76,7 +76,7 @@ export default function HowItWorksSection() {
                 >
                   {/* Number badge */}
                   <motion.div
-                    className="relative z-10 w-20 h-20 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue flex items-center justify-center mb-6 shadow-xl"
+                    className="relative z-10 w-20 h-20 rounded-full bg-[#325C84] flex items-center justify-center mb-6 shadow-xl"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
@@ -86,7 +86,7 @@ export default function HowItWorksSection() {
 
                     {/* Pulse effect */}
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-gradient-to-br from-secondary-blue to-primary-blue"
+                      className="absolute inset-0 rounded-full bg-[#325C84]"
                       animate={{
                         scale: [1, 1.3, 1],
                         opacity: [0.5, 0, 0.5],
@@ -126,8 +126,8 @@ export default function HowItWorksSection() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.15 + 0.3, duration: 0.4 }}
                     >
-                      <div className="w-1 h-12 bg-gradient-to-b from-secondary-blue to-primary-blue mx-auto" />
-                      <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-primary-blue mx-auto" />
+                      <div className="w-1 h-12 bg-[#325C84] mx-auto" />
+                      <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-[#325C84] mx-auto" />
                     </motion.div>
                   )}
                 </motion.div>
@@ -145,7 +145,7 @@ export default function HowItWorksSection() {
           className="text-center mt-16"
         >
           <motion.button
-            className="bg-gradient-to-r from-secondary-blue to-primary-blue text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="bg-[#325C84] text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

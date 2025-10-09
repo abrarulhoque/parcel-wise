@@ -27,7 +27,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-blue via-accent-blue to-secondary-blue flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#325C84] flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -68,7 +68,7 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-[#325C84] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-2xl">P</span>
             </div>
             <span className="text-2xl font-bold text-neutral-900">ParcelWise</span>
@@ -148,7 +148,7 @@ export default function LoginPage() {
             <motion.button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-secondary-blue to-primary-blue text-white py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#325C84] text-white py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               whileHover={{ scale: isLoading ? 1 : 1.02 }}
               whileTap={{ scale: isLoading ? 1 : 0.98 }}
             >

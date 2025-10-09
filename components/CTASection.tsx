@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-blue via-accent-blue to-secondary-blue relative overflow-hidden">
+    <section className="py-24 bg-[#325C84] relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -118,23 +118,15 @@ export default function CTASection() {
               className="pt-4"
             >
               <motion.button
-                className="group relative inline-flex items-center gap-3 bg-white text-primary-blue px-10 py-5 rounded-full font-bold text-xl shadow-2xl overflow-hidden"
+                className="group relative inline-flex items-center gap-3 bg-white text-[#325C84] px-10 py-5 rounded-full font-bold text-xl shadow-2xl overflow-hidden hover:bg-opacity-90"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Animated background on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-secondary-blue to-primary-blue"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                <span className="relative z-10">
                   Start uw gratis proefperiode
                 </span>
                 <ArrowRight
-                  className="relative z-10 group-hover:translate-x-1 group-hover:text-white transition-all duration-300"
+                  className="relative z-10 group-hover:translate-x-1 transition-all duration-300"
                   size={24}
                 />
               </motion.button>

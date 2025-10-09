@@ -30,8 +30,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const menuItems = [
     { icon: LayoutDashboard, label: 'Overzicht', href: '/dashboard' },
-    { icon: Package, label: 'Bestellingen', href: '/dashboard/orders' },
     { icon: Tag, label: 'Label aanmaken', href: '/dashboard/create-label' },
+    { icon: Package, label: 'Bestellingen', href: '/dashboard/orders' },
     { icon: MapPin, label: 'Tracking', href: '/dashboard/tracking' },
     { icon: BarChart3, label: 'Analytics', href: '/dashboard/analytics' },
     { icon: CreditCard, label: 'Facturering', href: '/dashboard/billing' },

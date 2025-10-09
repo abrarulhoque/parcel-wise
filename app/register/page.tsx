@@ -60,7 +60,7 @@ export default function RegisterPage() {
           >
             {/* Logo */}
             <div className="flex items-center justify-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#325C84] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">P</span>
               </div>
               <span className="text-2xl font-bold text-neutral-900">ParcelWise</span>
@@ -261,7 +261,7 @@ export default function RegisterPage() {
               <motion.button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-secondary-blue to-primary-blue text-white py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#325C84] text-white py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: isLoading ? 1 : 1.02 }}
                 whileTap={{ scale: isLoading ? 1 : 0.98 }}
               >

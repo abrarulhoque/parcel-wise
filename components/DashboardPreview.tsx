@@ -80,10 +80,10 @@ export default function DashboardPreview() {
               {/* Stats cards */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { icon: Package, label: 'Totaal zendingen', value: '1,247', change: '+12.5%', color: 'from-primary-blue to-accent-blue' },
-                  { icon: TrendingUp, label: 'Actieve bestellingen', value: '89', change: 'Wachten op labels', color: 'from-primary-blue to-accent-blue' },
-                  { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: 'from-primary-blue to-accent-blue' },
-                  { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: 'from-primary-blue to-accent-blue' },
+                  { icon: Package, label: 'Totaal zendingen', value: '1,247', change: '+12.5%', color: '[#325C84]' },
+                  { icon: TrendingUp, label: 'Actieve bestellingen', value: '89', change: 'Wachten op labels', color: '[#325C84]' },
+                  { icon: Users, label: 'Onderweg', value: '342', change: '98% op tijd', color: '[#325C84]' },
+                  { icon: DollarSign, label: 'Kostenbesparing', value: '€3,459', change: '38% bespaard', color: '[#325C84]' },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
                   return (
@@ -96,7 +96,7 @@ export default function DashboardPreview() {
                       whileHover={{ y: -5, scale: 1.02 }}
                       className="bg-gradient-to-br from-neutral-700/50 to-neutral-800/50 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-white/20 transition-all cursor-pointer group"
                     >
-                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                      <div className={`w-10 h-10 rounded-lg bg-${stat.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                         <Icon className="text-white" size={20} />
                       </div>
                       <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
@@ -127,7 +127,7 @@ export default function DashboardPreview() {
                     return (
                       <motion.div
                         key={i}
-                        className="flex-1 bg-gradient-to-t from-secondary-blue to-primary-blue rounded-t"
+                        className="flex-1 bg-[#325C84] rounded-t"
                         initial={{ height: 0 }}
                         whileInView={{ height: `${height}%` }}
                         viewport={{ once: true }}
@@ -183,7 +183,7 @@ export default function DashboardPreview() {
             className="absolute -bottom-6 left-1/2 transform -translate-x-1/2"
           >
             <motion.button
-              className="group bg-gradient-to-r from-secondary-blue to-primary-blue text-white px-8 py-4 rounded-full font-semibold shadow-2xl flex items-center gap-2"
+              className="group bg-[#325C84] text-white px-8 py-4 rounded-full font-semibold shadow-2xl flex items-center gap-2"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-secondary-blue to-primary-blue rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 bg-[#325C84] rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <span className="text-white font-bold text-xl">P</span>
             </div>
             <span className="text-xl md:text-2xl font-bold text-neutral-900">ParcelWise</span>
