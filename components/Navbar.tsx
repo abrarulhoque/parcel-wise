@@ -52,7 +52,7 @@ export default function Navbar() {
             </Link>
             <Link href="/register">
               <motion.button
-                className="px-6 py-2.5 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
+                className="px-6 py-2.5 bg-gradient-to-r from-primary-blue to-accent-blue text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </button>
               </Link>
               <Link href="/register" onClick={() => setIsOpen(false)}>
-                <button className="w-full px-6 py-2.5 bg-gradient-to-r from-secondary-blue to-primary-blue text-white rounded-lg font-semibold shadow-md">
+                <button className="w-full px-6 py-2.5 bg-gradient-to-r from-primary-blue to-accent-blue text-white rounded-lg font-semibold shadow-md">
                   Aanmelden
                 </button>
               </Link>
