@@ -76,7 +76,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start gratis proefperiode
+                Maak gratis account aan
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </motion.button>
 
