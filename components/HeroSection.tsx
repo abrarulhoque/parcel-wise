@@ -62,7 +62,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Maak verzendlabels, volg bestellingen en beheer uw logistiek in één krachtig dashboard. Bespaar tijd en verlaag kosten met wel 40%.
+              Alles voor uw verzendingen in één dashboard. Efficiënt, overzichtelijk en tijdbesparend.
             </motion.p>
 
             <motion.div

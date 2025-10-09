@@ -187,7 +187,7 @@ export default function BillingPage() {
                     <div className="font-medium text-neutral-900">{item.method}</div>
                     <div className="text-sm text-neutral-500">{item.description}</div>
                   </div>
-                  <div className="text-xl font-bold text-secondary-blue">{item.price}</div>
+                  <div className="text-xl font-bold" style={{ color: '#486D91' }}>{item.price}</div>
                 </div>
               ))}
             </div>
